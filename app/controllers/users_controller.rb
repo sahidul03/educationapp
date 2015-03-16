@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   protected
   def common_method_user
-    render layout: 'student_layout'
+    render layout: 'admin_layout'
   end
 
 end

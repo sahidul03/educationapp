@@ -105,7 +105,7 @@
       <p class="text-center">Are you sure want to logout from this awesome system?</p>
       <p class="text-center">
         <button class="btn btn-danger md-close">Nope!</button>
-        <a href="login.html" class="btn btn-success md-close">Yeah, I'm sure</a>
+        <%= link_to "Yeah, I'm sure", destroy_user_session_path, :method => :get , :class=>"btn btn-success md-close" %>
       </p>
     </div>
   </div>
@@ -293,12 +293,15 @@
         <div class="profile-buttons">
           <a href="javascript:;"><i class="fa fa-envelope-o pulse"></i></a>
           <a href="#connect" class="open-right"><i class="fa fa-comments"></i></a>
-          <a href="javascript:;" title="Sign Out"><i class="fa fa-power-off text-red-1"></i></a>
+          <%= link_to destroy_user_session_path, :method => :get, :title => 'Sign Out' do %>
+              <i class="fa fa-power-off text-red-1"></i>
+          <% end %>
         </div>
       </div>
     </div>
     <!--- Divider -->
     <div class="clearfix"></div>
+
     <hr class="divider" />
     <div class="clearfix"></div>
     <!--- Divider -->

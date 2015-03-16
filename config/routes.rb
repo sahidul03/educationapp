@@ -5,12 +5,16 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'users#index'
-  resources :users
+  # resources :users
   resources :admins
   resources :students
   resources :teachers
   resources :guardians
 
+
+  # devise_scope :user do
+  #   get '/users/sign_out' => 'devise/sessions#destroy'
+  # end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
