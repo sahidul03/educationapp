@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>Huban Creative | Coco Responsive Admin Template</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="Huban_files/style.css"> 
+
+<link rel="shortcut icon" href="http://hubancreative.com/projects/templates/presenter/assets/images/favicon2.png">
+<link rel="apple-touch-icon" href="http://hubancreative.com/projects/templates/presenter/assets/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="http://hubancreative.com/projects/templates/presenter/assets/images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="http://hubancreative.com/projects/templates/presenter/assets/images/apple-touch-icon-114x114.png">
+
+<link href="Huban_files/css.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="Huban_files/jquery-1.js"></script>
+
+<script>
+	if (window.top !== window.self) window.top.location.replace(window.self.location.href);
+	function e(){
+		var e = $("body").hasClass("collapsed")?0:$("#switcher").height();
+		$("#iframe").attr("height",$(window).height()-e+"px");
+		if(IS_IPAD){
+			$("#iframe").css("padding-bottom","60px");
+		}
+	}
+	$(function(){
+		IS_IPAD=navigator.userAgent.match(/iPad/i)!=null;
+		$(window).on("resize",function(){e()}).resize();
+
+		$(".displays a").click(function(){
+			$("#iframe").width($(this).data("width"));
+			$(".displays a").removeClass("active");
+			$(this).addClass("active");
+		});
+		$("#theme_list li.theme a").click(function(){
+			$("#iframe").attr("src",$(this).data("demo"));
+			$(".close a").attr("href",$(this).data("demo"));
+			$("#theme_select").text($(this).data("name"));
+			$(".purchase a").attr("href",$(this).data("purchase"));
+		});
+		$("#opener a").click(function(){
+			$("body").toggleClass("collapsed");
+			$(window).resize();
+			return false;
+		})
+		window.setTimeout(function(){
+			$("body").addClass("collapsed");
+			$(window).resize();
+		},5000);
+	});
+
+</script>
+
+</head>
+
+<body class="collapsed">
+
+    <div id="switcher">
+    	<div class="center">
+
+                <ul id="theme_list">
+                    <li id="theme_list">
+                    	<a id="theme_select" href="#">Coco Admin</a>
+				        <ul>
+				        				        	<li class="theme">
+				        		<a href="#" data-id="coco" data-title="Coco Responsive Admin Template" data-demo="http://hubancreative.com/projects/templates/coco/default/index2.html" data-name="Coco Admin" data-purchase="http://themeforest.net/item/coco-responsive-bootstrap-admin-template/9110062">Coco Admin<span>Default</span></a>
+				        	</li>
+				        				        	<li class="theme">
+				        		<a href="#" data-id="coco2" data-title="Coco Responsive Admin Template" data-demo="http://hubancreative.com/projects/templates/coco/classy/index2.html" data-name="Coco Admin" data-purchase="http://themeforest.net/item/coco-responsive-bootstrap-admin-template/9110062">Coco Admin<span>Classy</span></a>
+				        	</li>
+				        				        	<li class="theme">
+				        		<a href="#" data-id="coco3" data-title="Coco Responsive Admin Template" data-demo="http://hubancreative.com/projects/templates/coco/corporate/index2.html" data-name="Coco Admin" data-purchase="http://themeforest.net/item/coco-responsive-bootstrap-admin-template/9110062">Coco Admin<span>Corporate</span></a>
+				        	</li>
+				        				        	<li class="theme">
+				        		<a href="#" data-id="coco4" data-title="Coco Responsive Frontend Template" data-demo="http://hubancreative.com/projects/templates/coco/frontend" data-name="Coco Frontend" data-purchase="http://themeforest.net/item/coco-responsive-bootstrap-admin-template/9110062">Coco Frontend<span>Frontend</span></a>
+				        	</li>
+				        				        	<li class="theme">
+				        		<a href="#" data-id="moodstrap" data-title="Moodstrap Responsive Admin Template" data-demo="http://hubancreative.com/projects/templates/moodstrap" data-name="Moodstrap Admin" data-purchase="http://themeforest.net/item/moodstrap-responsive-bootstrap-admin-template/6333138">Moodstrap Admin</a>
+				        	</li>
+				                               </ul>
+                    </li> 
+                </ul>   
+
+                <div class="displays">
+                    <a href="#" class="desktop active" data-width="100%" title="Desktop View"></a> 
+                    <a href="#" class="tablet-portrait" data-width="1040" title="Tablet Landscape (1024x768)"></a> 
+                    <a href="#" class="tablet-landscape" data-width="768" title="Tablet Portrait (768x1024)"></a> 
+                    <a href="#" class="mobile-portrait" data-width="479" title="Mobile Landscape (480x320)"></a>
+                </div>
+                <ul class="links">
+                    <li class="purchase">
+                      <a href="http://themeforest.net/item/coco-responsive-bootstrap-admin-template/9110062" title="Purchase this theme">Purchase</a>
+                    </li>   
+                    <li class="close">
+                      <a href="http://hubancreative.com/projects/templates/coco/corporate/index2.html" title="Remove Frame">x Close Frame</a>
+                    </li>   
+                </ul>
+             
+                
+        </div>
+        <div id="opener"><a href="javascript:;"></a></div>
+    </div>
+    
+    <iframe id="iframe" src="Huban_files/index2.htm" frameborder="0" height="657px" width="100%"></iframe>
+
+</body></html>
