@@ -6,6 +6,13 @@ class AdminsController < ApplicationController
 
   end
 
+  def admission
+
+  end
+
+  def show
+
+  end
 
 
 
