@@ -7,4 +7,12 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   # validates :user_name, presence: true
   # validates :user_flag, presence: true, numericality: true
+
+
+
+  mount_uploader :profilepic, ProfilepicUploader
+
+
+  has_and_belongs_to_many :semesters
+
 end

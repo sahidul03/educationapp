@@ -12,4 +12,8 @@ class UsersController < ApplicationController
     render layout: 'admin_layout'
   end
 
+  def user_params
+    params.require(:user).permit(:name, :email, :user_name, :password, :reset_password);
+  end
+
 end

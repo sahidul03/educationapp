@@ -11,7 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310094017) do
+ActiveRecord::Schema.define(version: 20150320112907) do
+
+  create_table "levels", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "semesters", force: true do |t|
+    t.string   "name"
+    t.integer  "year_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "semesters", ["year_id"], name: "index_semesters_on_year_id"
+
+  create_table "shifts", force: true do |t|
+    t.string   "name"
+    t.integer  "semester_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "shifts", ["semester_id"], name: "index_shifts_on_semester_id"
 
   create_table "users", force: true do |t|
     t.string   "user_name"
@@ -28,9 +52,20 @@ ActiveRecord::Schema.define(version: 20150310094017) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "name"
+    t.string   "profilepic"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "years", force: true do |t|
+    t.string   "name"
+    t.integer  "level_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "years", ["level_id"], name: "index_years_on_level_id"
 
 end
