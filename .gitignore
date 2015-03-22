@@ -17,3 +17,7 @@
 
 /.idea/
 .idea/workspace.xml
+/config/database.yml
+.DS_Store
+/log/*
+/tmp/*
