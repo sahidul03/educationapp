@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   # validates :name, presence: true
-  validates :email, presence: true
+  validates :user_name, presence: true
   # validates :user_name, presence: true
   # validates :user_flag, presence: true, numericality: true
 
@@ -14,5 +14,14 @@ class User < ActiveRecord::Base
 
 
   has_and_belongs_to_many :semesters
+
+
+  def email_required?
+    false
+  end
+
+  def email_changed?
+    false
+  end
 
 end
