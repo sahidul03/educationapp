@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320112907) do
+ActiveRecord::Schema.define(version: 20150402095906) do
+
+  create_table "guardians", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "guardians", ["user_id"], name: "index_guardians_on_user_id"
 
   create_table "levels", force: true do |t|
     t.string   "name"
@@ -36,6 +45,29 @@ ActiveRecord::Schema.define(version: 20150320112907) do
   end
 
   add_index "shifts", ["semester_id"], name: "index_shifts_on_semester_id"
+
+  create_table "shifts_users", force: true do |t|
+    t.integer "shift_id"
+    t.integer "user_id"
+  end
+
+  add_index "shifts_users", ["shift_id"], name: "index_shifts_users_on_shift_id"
+  add_index "shifts_users", ["user_id"], name: "index_shifts_users_on_user_id"
+
+  create_table "students", force: true do |t|
+    t.string   "father_name"
+    t.string   "mother_name"
+    t.string   "local_guardian"
+    t.string   "relationship_with_guardian"
+    t.string   "gender"
+    t.integer  "user_id"
+    t.integer  "guardian_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "students", ["guardian_id"], name: "index_students_on_guardian_id"
+  add_index "students", ["user_id"], name: "index_students_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "user_name"

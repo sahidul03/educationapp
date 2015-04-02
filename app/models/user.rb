@@ -13,7 +13,9 @@ class User < ActiveRecord::Base
   mount_uploader :profilepic, ProfilepicUploader
 
 
-  has_and_belongs_to_many :semesters
+  has_and_belongs_to_many :shifts
+  has_many :guardians
+  has_many :students
 
 
   def email_required?
