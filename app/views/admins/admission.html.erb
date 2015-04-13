@@ -30,56 +30,62 @@
               <div class="widget-content padding">
                 <div id="basic-form">
 
-                  <form role="form">
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Student Name</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Student name">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Fathers Name</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="fathers name">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Mother Name</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Mother Name">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Local Guardian name</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Local Guardian name">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Relation with Guardian</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Local Guardian name">
-                    </div>
-                    <div class="form-group">
-                      <label class="col-sm-2 control-label">Gender</label>
-                      <div class="col-sm-10">
-                        <div class="radio iradio">
-                          <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                            Male
-                          </label>
-                        </div>
-                        <div class="radio iradio">
-                          <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                            Female
-                          </label>
+
+
+
+                  <%= form_for Student.new, url: create_student_and_guardian_admins_path, method: :post do |f|   %>
+                      <%= f.text_field :father_name %><br/>
+                      <%= f.submit "Submit", :class=>"btn btn-default"%>
+                      <% end %>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Student Name</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Student name">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Fathers Name</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="fathers name">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Mother Name</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Mother Name">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Local Guardian name</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Local Guardian name">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Relation with Guardian</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Local Guardian name">
+                      </div>
+                      <div class="form-group">
+                        <label class="col-sm-2 control-label">Gender</label>
+                        <div class="col-sm-10">
+                          <div class="radio iradio">
+                            <label>
+                              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                              Male
+                            </label>
+                          </div>
+                          <div class="radio iradio">
+                            <label>
+                              <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                              Female
+                            </label>
+                          </div>
                         </div>
                       </div>
-                    </div>
 
 
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                      <input type="file" class="btn btn-default" title="Search for a file to add">
-                      <p class="help-block">Example block-level help text here.</p>
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                  </form>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      </div>
+                      <div class="form-group">
+                        <input type="file" class="btn btn-default" title="Search for a file to add">
+                        <p class="help-block">Example block-level help text here.</p>
+                      </div>
+                      <!--<button type="submit" class="btn btn-default">Submit</button>-->
+
 
                 </div>
               </div>
@@ -93,4 +99,4 @@
       </div>
     </div>
   </div>
-    </div>
+</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150402095906) do
+ActiveRecord::Schema.define(version: 20150413102024) do
 
   create_table "guardians", force: true do |t|
     t.string   "name"
@@ -37,6 +37,14 @@ ActiveRecord::Schema.define(version: 20150402095906) do
 
   add_index "semesters", ["year_id"], name: "index_semesters_on_year_id"
 
+  create_table "shift_students", force: true do |t|
+    t.integer "shift_id"
+    t.integer "student_id"
+  end
+
+  add_index "shift_students", ["shift_id"], name: "index_shift_students_on_shift_id"
+  add_index "shift_students", ["student_id"], name: "index_shift_students_on_student_id"
+
   create_table "shifts", force: true do |t|
     t.string   "name"
     t.integer  "semester_id"
@@ -45,14 +53,6 @@ ActiveRecord::Schema.define(version: 20150402095906) do
   end
 
   add_index "shifts", ["semester_id"], name: "index_shifts_on_semester_id"
-
-  create_table "shifts_users", force: true do |t|
-    t.integer "shift_id"
-    t.integer "user_id"
-  end
-
-  add_index "shifts_users", ["shift_id"], name: "index_shifts_users_on_shift_id"
-  add_index "shifts_users", ["user_id"], name: "index_shifts_users_on_user_id"
 
   create_table "students", force: true do |t|
     t.string   "father_name"

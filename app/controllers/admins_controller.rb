@@ -7,13 +7,17 @@ class AdminsController < ApplicationController
   end
 
   def admission
-
+    @student = Student.new
+    # raise @student.inspect
   end
 
   def show
 
   end
 
+  def create_student_and_guardian
+
+  end
 
 
   protected

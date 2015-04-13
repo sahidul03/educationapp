@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end
 
 
+
   protected
   def common_method_user
     render layout: 'admin_layout'

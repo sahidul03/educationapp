@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :admins do
     collection do
       get "admission"
+      post "create_student_and_guardian"
     end
   end
   resources :students
