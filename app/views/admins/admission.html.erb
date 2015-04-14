@@ -34,28 +34,27 @@
 
 
                   <%= form_for Student.new, url: create_student_and_guardian_admins_path, method: :post do |f|   %>
-                      <%= f.text_field :father_name %><br/>
-                      <%= f.submit "Submit", :class=>"btn btn-default"%>
-                      <% end %>
+
+
                       <div class="form-group">
                         <label for="exampleInputEmail1">Student Name</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Student name">
+                        <%= text_field_tag :student_name , class: 'form-control', :placeholder=>"Student name" %>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Fathers Name</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="fathers name">
+                        <label for="exampleInputEmail1">Father's Name</label>
+                        <%= f.text_field :father_name , class: 'form-control', :placeholder=>"Father's name" %>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Mother Name</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Mother Name">
+                        <label for="exampleInputEmail1">Mother's Name</label>
+                        <%= f.text_field :mother_name , class: 'form-control', :placeholder=>"Mother's name" %>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Local Guardian name</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Local Guardian name">
+                        <%= f.text_field :local_guardian , class: 'form-control', :placeholder=>"Local Guardian name" %>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Relation with Guardian</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Local Guardian name">
+                        <%= f.text_field :relationship_with_guardian , class: 'form-control', :placeholder=>"Relation with Guardian" %>
                       </div>
                       <div class="form-group">
                         <label class="col-sm-2 control-label">Gender</label>
@@ -85,7 +84,8 @@
                         <p class="help-block">Example block-level help text here.</p>
                       </div>
                       <!--<button type="submit" class="btn btn-default">Submit</button>-->
-
+                      <%= f.submit "Submit", :class=>"btn btn-default"%>
+                  <% end %>
 
                 </div>
               </div>
