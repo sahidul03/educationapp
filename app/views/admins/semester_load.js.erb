@@ -1,0 +1,3 @@
+<% if @semesters.any? %>
+$('#select_semester').html('<%= escape_javascript options_from_collection_for_select(@semesters,:id,:name) %>')
+<% end %>

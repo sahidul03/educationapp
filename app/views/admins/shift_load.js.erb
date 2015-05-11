@@ -1,0 +1,3 @@
+<% if @shifts.any? %>
+$('#select_shift').html('<%= escape_javascript options_from_collection_for_select(@shifts,:id,:name) %>')
+<% end %>

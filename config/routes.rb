@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     collection do
       get "admission"
       post "create_student_and_guardian"
+      get "level_load"
+      get "year_load"
+      get "semester_load"
+      get "shift_load"
     end
   end
   resources :students

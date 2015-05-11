@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150413102024) do
+ActiveRecord::Schema.define(version: 20150509113125) do
+
+  create_table "campus", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "guardians", force: true do |t|
     t.string   "name"
+    t.integer  "contact_number"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -55,17 +63,22 @@ ActiveRecord::Schema.define(version: 20150413102024) do
   add_index "shifts", ["semester_id"], name: "index_shifts_on_semester_id"
 
   create_table "students", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "father_name"
     t.string   "mother_name"
     t.string   "local_guardian"
     t.string   "relationship_with_guardian"
     t.string   "gender"
+    t.integer  "contact_number"
     t.integer  "user_id"
     t.integer  "guardian_id"
+    t.integer  "campus_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "students", ["campus_id"], name: "index_students_on_campus_id"
   add_index "students", ["guardian_id"], name: "index_students_on_guardian_id"
   add_index "students", ["user_id"], name: "index_students_on_user_id"
 

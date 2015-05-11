@@ -1,0 +1,3 @@
+<% if @years.any? %>
+$('#select_year').html('<%= escape_javascript options_from_collection_for_select(@years,:id,:name) %>')
+<% end %>
