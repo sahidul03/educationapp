@@ -643,163 +643,101 @@
 <!-- Right Sidebar End -->
 <!-- Start right content -->
 <div class="content-page">
+<ol class="breadcrumb">
 
-<div class="content bg-color-menu">
-<div class="top-banner-up"></div>
+  <div id='cssmenu'>
+    <ul>
+      <li>
+        <%= link_to admission_admins_path do %>
+            <div class="icone-button">
+              <i style="color:#7266BA;" class="fa fa-user"></i>
+              <span style="background-color:#23B7E5;" >13</span>
+            </div>
+            <span>Admission</span>
+        <% end %>
+      </li>
+      <li><a href='#'>
+        <div class="icone-button">
+          <i style="color:#23B7E5;" class="fa fa-list"></i>
+          <span style="background-color:#7266BA;">13</span>
+        </div>
+        <span>Attandance</span>
+      </a>
+      </li>
+
+      <li><a href='#'>
+        <div class="icone-button">
+          <i style="color:#F05050;"  class="fa fa-android"></i>
+          <span style="background-color:#27C24C;" >10%</span>
+        </div>
+        <span>Result</span>
+      </a>
+      </li>
+      <li><a href='#'>
+        <div class="icone-button">
+          <i style="color:#7266BA;" class="fa fa-bell-o"></i>
+
+        </div>
+        <span>Notice</span>
+      </a>
+      </li>
+      <li><a href='#'>
+        <div class="icone-button">
+          <i style="color:#23B7E5;" class="fa fa-windows"></i>
+
+        </div>
+        <span>Routine</span>
+      </a>
+      </li>
+      <li><a href='#'>
+        <div class="icone-button">
+          <i style="color:#F05050;" class="fa fa-barcode"></i>
+          <span style="background-color:#27C24C;">5%</span>
+        </div>
+        <span>Fee</span>
+      </a>
+      </li>
+      <li><a href='#'>
+        <div class="icone-button">
+          <i style="color:#7266BA;" class="fa fa-file-o"></i>
+          <span style="background-color:#23B7E5;">5</span>
+        </div>
+        <span>Payroll</span>
+      </a>
+      </li>
+      <li><a href='#'>
+        <div class="icone-button">
+          <i style="color:#23B7E5;" class="fa fa-bar-chart-o"></i>
+          <span style="background-color:#7266BA;">5</span>
+        </div>
+        <span>Accounting</span>
+      </a>
+      </li>
+      <li><a href='#'>
+        <div class="icone-button">
+          <i class="fa fa-book"></i>
+          <span>5</span>
+        </div>
+        <span>Library</span>
+      </a>
+      </li>
+      <li><a href='#'>
+        <div class="icone-button">
+          <i class="fa fa-pencil-square-o"></i>
+          <span>5</span>
+        </div>
+        <span>Education</span>
+      </a>
+      </li>
+
+    </ul>
+  </div>
+
+</ol>
+
+
 <!-- Start info box -->
-<div style="margin-bottom:40px; border-bottom:1px solid #E1E1E1; padding-bottom:10px;" class="row   top-summary">
-  <%= link_to admission_admins_path do %>
 
-    <div class="col-lg-1 col-md-6">
-      <div class="widget ">
-        <div class="widget-content">
-
-          <div class="menu-logo">
-            <img src="/images/icone/Money@58w.png" >
-            <a>Admission</a>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  <% end %>
-  <div class="col-lg-1 col-md-6">
-    <div class="widget ">
-      <div class="widget-content">
-        <div class="menu-logo">
-          <img src="/images/icone/Ticks@58w.png" >
-          <a style="margin-left:-5px;" >Attandance</a>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-
-  <div class="col-lg-1 col-md-6">
-    <div class="widget ">
-      <div class="widget-content">
-        <div class="menu-logo">
-          <img src="/images/icone/Pieces@58w.png" >
-          <a style="margin-left:7px;" > Result</a>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-
-  <div class="col-lg-1 col-md-6">
-    <div class="widget ">
-      <div class="widget-content">
-        <div class="menu-logo">
-          <img src="/images/icone/Docs@58w.png" >
-          <a style="margin-left:9px;">  Notice</a>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-  <div class="col-lg-1 col-md-6">
-    <div class="widget ">
-      <div class="widget-content">
-        <div class="menu-logo">
-          <img src="/images/icone/Crossed@58w.png" >
-          <a style="margin-left:6px;">  Routine</a>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-  <div class="col-lg-1 col-md-6">
-    <div class="widget ">
-      <div class="widget-content">
-        <div class="menu-logo">
-          <img src="/images/icone/Payments@58w.png" >
-          <a style="margin-left:15px;">Fee</a>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-  <div class="col-lg-1 col-md-6">
-    <div class="widget ">
-      <div class="widget-content">
-        <div class="menu-logo">
-          <img src="/images/icone/Links@58w.png" >
-          <a style="margin-left:8px;">Payroll</a>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-  <div class="col-lg-1 col-md-6">
-    <div class="widget ">
-      <div class="widget-content">
-        <div class="menu-logo">
-          <img src="/images/icone/Graph@58w.png" >
-          <a style="margin-left:-5px;">Accounting</a>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-  <div class="col-lg-1 col-md-6">
-    <div class="widget ">
-      <div class="widget-content">
-        <div class="menu-logo">
-          <img src="/images/icone/World@58w.png" >
-          <a style="margin-left:5px;">Librarry</a>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-  <div class="col-lg-1 col-md-6">
-    <div class="widget ">
-      <div class="widget-content">
-        <div class="menu-logo">
-          <img src="/images/icone/Ring@58w.png" >
-          <a style="margin-left:15px;">Fleet</a>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-  <div class="col-lg-1 col-md-6">
-    <div class="widget ">
-      <div class="widget-content">
-        <div class="menu-logo">
-          <img src="/images/icone/Bubbles 2@58w.png" >
-          <a>Education</a>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-  <div class="col-lg-1 col-md-6">
-    <div class="widget ">
-      <div class="widget-content">
-        <div class="menu-logo">
-          <img src="/images/icone/Location@58w.png" >
-          <a style="margin-left:12px;">Social</a>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-
-</div>
 <!-- End of info box -->
 
 

@@ -1,0 +1,1437 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Convergent soft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="description" content="">
+  <meta name="keywords" content="coco bootstrap template, coco admin, bootstrap,admin template, bootstrap admin,">
+  <meta name="author" content="Huban Creative">
+
+  <!-- Base Css Files -->
+  <link href="css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/fontello.css" rel="stylesheet" />
+  <link href="css/animate.min.css" rel="stylesheet" />
+  <link href="css/component.css" rel="stylesheet" />
+  <link href="css/magnific-popup.css" rel="stylesheet" />
+  <link href="css/ios7-switch.css" rel="stylesheet" />
+  <link href="css/pace.css" rel="stylesheet" />
+  <link href="css/sortable-theme-bootstrap.css" rel="stylesheet" />
+  <link href="css/datepicker.css" rel="stylesheet" />
+  <link href="css/all.css" rel="stylesheet" />
+  <!-- Code Highlighter for Demo -->
+  <link href="css/github.css" rel="stylesheet" />
+  <link href="css/others.css" rel="stylesheet" />
+
+  <!-- Extra CSS Libraries Start -->
+  <link href="css/rickshaw.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/morris.css" rel="stylesheet" type="text/css" />
+  <link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+  <link href="css/clock.css" rel="stylesheet" type="text/css" />
+  <link href="css/bic_calendar.css" rel="stylesheet" type="text/css" />
+  <link href="css/sortable-theme-bootstrap.css" rel="stylesheet" type="text/css" />
+  <link href="css/simpleweather.css" rel="stylesheet" type="text/css" />
+  <link href="css/bootstrap-editable.css" rel="stylesheet" type="text/css" />
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+  <link href="css/style-responsive.css" rel="stylesheet" />
+
+
+
+  <link rel="shortcut icon" href="assets/img/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/img/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/img/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="assets/img/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/img/apple-touch-icon-152x152.png" />
+</head>
+<body class="fixed-left">
+<!-- Modal Start -->
+<!-- Modal Task Progress -->
+<div class="md-modal md-3d-flip-vertical" id="task-progress">
+  <div class="md-content">
+    <h3><strong>Task Progress</strong> Information</h3>
+    <div>
+      <p>CLEANING BUGS</p>
+      <div class="progress progress-xs for-modal">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+          <span class="sr-only">80&#37; Complete</span>
+        </div>
+      </div>
+      <p>POSTING SOME STUFF</p>
+      <div class="progress progress-xs for-modal">
+        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+          <span class="sr-only">65&#37; Complete</span>
+        </div>
+      </div>
+      <p>BACKUP DATA FROM SERVER</p>
+      <div class="progress progress-xs for-modal">
+        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+          <span class="sr-only">95&#37; Complete</span>
+        </div>
+      </div>
+      <p>RE-DESIGNING WEB APPLICATION</p>
+      <div class="progress progress-xs for-modal">
+        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+          <span class="sr-only">100&#37; Complete</span>
+        </div>
+      </div>
+      <p class="text-center">
+        <button class="btn btn-danger btn-sm md-close">Close</button>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Logout -->
+<div class="md-modal md-just-me" id="logout-modal">
+  <div class="md-content">
+    <h3><strong>Logout</strong> Confirmation</h3>
+    <div>
+      <p class="text-center">Are you sure want to logout from this awesome system?</p>
+      <p class="text-center">
+        <button class="btn btn-danger md-close">Nope!</button>
+        <a href="login.html" class="btn btn-success md-close">Yeah, I'm sure</a>
+      </p>
+    </div>
+  </div>
+</div>        <!-- Modal End -->
+<!-- Begin page -->
+<div id="wrapper">
+
+<!-- Top Bar Start -->
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="logo">
+      <h1><a href="#"><img src="images/logo.png" alt="Logo"></a></h1>
+    </div>
+    <button class="button-menu-mobile open-left">
+      <i class="fa fa-bars"></i>
+    </button>
+  </div>
+  <!-- Button mobile view to collapse sidebar menu -->
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-collapse2">
+        <ul class="nav navbar-nav hidden-xs">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-th"></i></a>
+            <div class="dropdown-menu grid-dropdown">
+              <div class="row stacked">
+                <div class="col-xs-4">
+                  <a href="javascript:;" data-app="notes-app" data-status="active"><i class="icon-edit"></i>Notes</a>
+                </div>
+                <div class="col-xs-4">
+                  <a href="javascript:;" data-app="todo-app" data-status="active"><i class="icon-check"></i>Todo List</a>
+                </div>
+                <div class="col-xs-4">
+                  <a href="javascript:;" data-app="calc" data-status="inactive"><i class="fa fa-calculator"></i>Calculator</a>
+                </div>
+              </div>
+              <div class="row stacked">
+                <div class="col-xs-4">
+                  <a href="javascript:;" data-app="weather-widget" data-status="active"><i class="icon-cloud-3"></i>Weather</a>
+                </div>
+                <div class="col-xs-4">
+                  <a href="javascript:;" data-app="calendar-widget2" data-status="active"><i class="icon-calendar"></i>Calendar</a>
+                </div>
+                <div class="col-xs-4">
+                  <a href="javascript:;" data-app="stock-app" data-status="inactive"><i class="icon-chart-line"></i>Stocks</a>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </li>
+          <li class="language_bar dropdown hidden-xs">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">English (US) <i class="fa fa-caret-down"></i></a>
+            <ul class="dropdown-menu pull-right">
+              <li><a href="#">German</a></li>
+              <li><a href="#">French</a></li>
+              <li><a href="#">Italian</a></li>
+              <li><a href="#">Spanish</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right top-navbar">
+          <li class="dropdown iconify hide-phone">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i><span class="label label-danger absolute">4</span></a>
+            <ul class="dropdown-menu dropdown-message">
+              <li class="dropdown-header notif-header"><i class="icon-bell-2"></i> New Notifications<a class="pull-right" href="#"><i class="fa fa-cog"></i></a></li>
+              <li class="unread">
+                <a href="#">
+                  <p><strong>John Doe</strong> Uploaded a photo <strong>&#34;DSC000254.jpg&#34;</strong>
+                    <br /><i>2 minutes ago</i>
+                  </p>
+                </a>
+              </li>
+              <li class="unread">
+                <a href="#">
+                  <p><strong>John Doe</strong> Created an photo album  <strong>&#34;Fappening&#34;</strong>
+                    <br /><i>8 minutes ago</i>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <p><strong>John Malkovich</strong> Added 3 products
+                    <br /><i>3 hours ago</i>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <p><strong>Sonata Arctica</strong> Send you a message <strong>&#34;Lorem ipsum dolor...&#34;</strong>
+                    <br /><i>12 hours ago</i>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <p><strong>Johnny Depp</strong> Updated his avatar
+                    <br /><i>Yesterday</i>
+                  </p>
+                </a>
+              </li>
+              <li class="dropdown-footer">
+                <div class="btn-group btn-group-justified">
+                  <div class="btn-group">
+                    <a href="#" class="btn btn-sm btn-primary"><i class="icon-ccw-1"></i> Refresh</a>
+                  </div>
+                  <div class="btn-group">
+                    <a href="#" class="btn btn-sm btn-danger"><i class="icon-trash-3"></i> Clear All</a>
+                  </div>
+                  <div class="btn-group">
+                    <a href="#" class="btn btn-sm btn-success">See All <i class="icon-right-open-2"></i></a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown iconify hide-phone">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i><span class="label label-danger absolute">3</span></a>
+            <ul class="dropdown-menu dropdown-message">
+              <li class="dropdown-header notif-header"><i class="icon-mail-2"></i> New Messages</li>
+              <li class="unread">
+                <a href="#" class="clearfix">
+                  <img src="images/2.jpg" class="xs-avatar ava-dropdown" alt="Avatar">
+                  <strong>John Doe</strong><i class="pull-right msg-time">5 minutes ago</i><br />
+                  <p>Duis autem vel eum iriure dolor in hendrerit ...</p>
+                </a>
+              </li>
+              <li class="unread">
+                <a href="#" class="clearfix">
+                  <img src="images/1.jpg" class="xs-avatar ava-dropdown" alt="Avatar">
+                  <strong>Sandra Kraken</strong><i class="pull-right msg-time">22 minutes ago</i><br />
+                  <p>Duis autem vel eum iriure dolor in hendrerit ...</p>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="clearfix">
+                  <img src="images/users/chat/3.jpg" class="xs-avatar ava-dropdown" alt="Avatar">
+                  <strong>Zoey Lombardo</strong><i class="pull-right msg-time">41 minutes ago</i><br />
+                  <p>Duis autem vel eum iriure dolor in hendrerit ...</p>
+                </a>
+              </li>
+              <li class="dropdown-footer"><div class=""><a href="#" class="btn btn-sm btn-block btn-primary"><i class="fa fa-share"></i> See all messages</a></div></li>
+            </ul>
+          </li>
+          <li class="dropdown iconify hide-phone"><a href="#" onclick="javascript:toggle_fullscreen()"><i class="fa fa-expand"></i></a></li>
+          <li class="dropdown topbar-profile">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="rounded-image topbar-profile-image"><img src="images/user-35.jpg"></span> <i class="fa fa-angle-down"></i></a>
+            <ul class="dropdown-menu">
+              <div class="info-dropdown-menu">
+                <div class="info-image-left">
+                  <img src="images/teacher-2.jpg">
+                </div>
+                <div class="info-details-right">
+                  <h3>Naila Haque</h3>
+                  <h5>User ID: naila_123</h5>
+                  <li><a href="#">Setting</a> <span> | </span> <a href="#">Privecy</a></li>
+                  <button style="margin:8px 15px;" type="button" class="btn btn-google-plus btn-sm"> View Profile </button>
+
+                </div>
+              </div>
+
+              <div class="logout-dropdown-menu">
+                <div  class="col-sm-12">
+
+                  <a class="btn btn-sm btn-primary "><i class="fa fa-ambulance"></i> Help</a>
+                  <a style="float:right" class="btn btn-sm btn-primary "><i class="fa fa-upload"></i> Logout</a>
+
+                </div>
+              </div>
+
+
+            </ul>
+          </li>
+          <li class="right-opener">
+            <a href="javascript:;" class="open-right"><i class="fa fa-angle-double-left"></i><i class="fa fa-angle-double-right"></i></a>
+          </li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+
+</div>
+<!-- Top Bar End -->
+<!-- Left Sidebar Start -->
+<div class="left side-menu">
+  <div class="sidebar-inner slimscrollleft">
+    <!-- Search form -->
+    <form role="search" class="navbar-form">
+      <div class="form-group">
+        <input type="text" placeholder="Search" class="form-control">
+        <button type="submit" class="btn search-button"><i class="fa fa-search"></i></button>
+      </div>
+    </form>
+    <div class="clearfix"></div>
+    <!--- Profile -->
+    <div class="profile-info">
+      <div class="col-xs-4">
+        <a href="profile.html" class="rounded-image profile-image"><img src="images/user5.jpg"></a>
+      </div>
+      <div class="col-xs-8">
+        <div class="profile-text">Welcome <b>Jane</b></div>
+        <div class="profile-buttons">
+          <a href="javascript:;"><i class="fa fa-envelope-o pulse"></i></a>
+          <a href="#connect" class="open-right"><i class="fa fa-comments"></i></a>
+          <a href="javascript:;" title="Sign Out"><i class="fa fa-power-off text-red-1"></i></a>
+        </div>
+      </div>
+    </div>
+    <!--- Divider -->
+    <div class="clearfix"></div>
+    <hr class="divider" />
+    <div class="clearfix"></div>
+    <!--- Divider -->
+    <div id="sidebar-menu">
+      <ul>
+        <li class='has_sub'><a href='javascript:void(0);'><i class='fa fa-home'></i><span>Student Attandance</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span></a>
+          <ul>
+            <li><a href='index.html'><span>Dashboard v1</span></a></li>
+            <li><a href='index2.html'><span>Dashboard v2</span></a></li>
+          </ul>
+        </li>
+        <li class='has_sub'><a href='javascript:void(0);'><i class='fa fa-bullseye'></i><span>Teacher Attandance </span> <span class="pull-right"><i class="fa fa-angle-down"></i></span></a>
+          <ul>
+            <li><a href='alerts.html'><span>Alerts</span></a></li>
+            <li><a href='buttons.html'><span>Buttons</span></a></li>
+            <li><a href='calendar.html'><span>Calendar</span></a></li>
+            <li><a href='grid.html'><span>Grid</span></a></li>
+            <li><a href='icons.html'><span>Icons</span></a></li>
+            <li><a href='modals.html'><span>Modals</span></a></li>
+            <li><a href='nested-list.html'><span>Nested List</span></a></li>
+            <li><a href='notifications.html'><span>Notifications</span></a></li>
+            <li><a href='portlets.html'><span>Portlets</span></a></li>
+            <li><a href='progress-bars.html'><span>Progress Bars</span></a></li>
+            <li><a href='tabs-accordions.html'><span>Tabs & Accordions</span></a></li>
+            <li><a href='typography.html'><span>Typography</span></a></li>
+          </ul>
+        </li>
+        <li class='has_sub'><a href='javascript:void(0);'><i class='fa fa-chain-broken'></i><span>Employee Attandance</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span></a>
+          <ul>
+            <li><a href='forms.html'><span>Form Elements</span></a></li>
+            <li><a href='advanced-forms.html'><span>Advanced Forms</span></a></li>
+            <li><a href='form-wizard.html'><span>Form Wizard</span></a></li>
+            <li><a href='form-validation.html'><span>Form Validation</span></a></li>
+            <li><a href='form-uploads.html'><span>File Uploads</span></a></li>
+          </ul>
+        </li>
+        <li class='has_sub'><a href='javascript:void(0);'><i class='fa fa-table'></i><span>Students time</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span></a>
+          <ul>
+            <li><a href='tables.html'><span>Basic Tables</span></a></li>
+            <li><a href='datatables.html'><span>Datatables</span></a></li>
+          </ul>
+        </li>
+        <li class='has_sub'><a href='javascript:void(0);'><i class='fa fa-map-marker'></i><span>Teachers time</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span></a>
+          <ul>
+            <li><a href='google-maps.html'><span>Google Maps</span></a></li>
+            <li><a href='vector-maps.html'><span>Vector Maps</span></a></li>
+          </ul>
+        </li>
+        <li class='has_sub'><a href='javascript:void(0);'><i class='fa fa-envelope'></i><span>Employer time</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span></a>
+          <ul>
+            <li><a href='inbox.html'><span>Inbox</span></a></li>
+            <li><a href='read-message.html'><span>View Email</span></a></li>
+            <li><a href='new-message.html'><span>New Message</span></a></li>
+          </ul>
+        </li>
+        <li class='has_sub'><a href='javascript:void(0);'><i class='fa fa-chevron-right'></i><span>Charts</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span></a>
+          <ul>
+            <li><a href='sparkline-charts.html'><span>Sparkline Charts</span></a></li>
+            <li><a href='morris-charts.html'><span>Morris Charts</span></a></li>
+            <li><a href='rickshaw-charts.html'><span>Rickshaw Charts</span></a></li>
+            <li><a href='other-charts.html'><span>Other Charts</span></a></li>
+          </ul>
+        </li>
+        <li class='has_sub'><a href='javascript:void(0);'><i class='fa fa-magic'></i><span>Extras</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span></a>
+          <ul>
+            <li><a href='blank.html'><span>Blank Page</span></a></li>
+            <li><a href='login.html'><span>Login</span></a></li>
+            <li><a href='register.html'><span>Register</span></a></li>
+            <li><a href='lockscreen.html'><span>Lock Screen</span></a></li>
+            <li><a href='404.html'><span>404 Error</span></a></li>
+            <li><a href='500.html'><span>500 Error</span></a></li>
+            <li><a href='profile.html'><span>User Profile</span></a></li>
+            <li><a href='invoice.html'><span>Invoice</span></a></li>
+            <li><a href='gallery.html'><span>Gallery</span></a></li>
+            <li><a href='maintenance.html'><span>Maintenance</span></a></li>
+            <li class='has_sub'><a href='javascript:void(0);'><span>3 Level menu</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span></a>
+              <ul>
+                <li><a href='javascript:void(0);'><span>Sub Item</span></a></li>
+              </ul>
+            </li>
+            <li class='has_sub'><a href='javascript:void(0);'><span>4 Level Menu</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span></a>
+              <ul><li class='has_sub'><a href='javascript:void(0);'><span>Sub Item - level 3</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span></a>
+                <ul>
+                  <li><a href='javascript:void(0);'><span>Sub Item - level 4</span></a></li>
+                </ul>
+              </li>
+              </ul>
+            </li>
+            <li class='has_sub'><a href='javascript:void(0);'><span>Submenu with icons</span> <span class="pull-right"><i class="fa fa-angle-down"></i></span></a>
+              <ul>
+                <li><a href='javascript:void(0);'><i class='fa fa-camera'></i><span>Item with icon</span></a></li>
+                <li><a href='javascript:void(0);'><i class='entypo entypo-users'></i><span>Another Item</span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="portlets">
+      <div id="chat_groups" class="widget transparent nomargin">
+        <h2>Chat Groups</h2>
+        <div class="widget-content">
+          <ul class="list-unstyled">
+            <li><a href="javascript:;"><i class="fa fa-circle-o text-red-1"></i> Colleagues</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o text-blue-1"></i> Family</a></li>
+            <li><a href="javascript:;"><i class="fa fa-circle-o text-green-1"></i> Friends</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="recent_tickets" class="widget transparent nomargin">
+        <h2>Recent Tickets</h2>
+        <div class="widget-content">
+          <ul class="list-unstyled">
+            <li>
+              <a href="javascript:;">My wordpress blog is broken <span>I was trying to save my page and...</span></a>
+            </li>
+            <li>
+              <a href="javascript:;">Server down, need help!<span>My server is not responding for the last...</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div><br><br><br>
+  </div>
+  <div class="left-footer">
+    <div class="progress progress-xs">
+      <div class="progress-bar bg-green-1" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+        <span class="progress-precentage">80%</span>
+      </div>
+
+      <a data-toggle="tooltip" title="See task progress" class="btn btn-default md-trigger" data-modal="task-progress"><i class="fa fa-inbox"></i></a>
+    </div>
+  </div>
+</div>
+<!-- Left Sidebar End -->		    <!-- Right Sidebar Start -->
+
+
+
+
+<div class="right side-menu">
+<ul class="nav nav-tabs nav-justified" id="right-tabs">
+  <li class="active"><a href="#feed" data-toggle="tab" title="Live Feed"><i class="fa fa-windows"></i></a></li>
+  <li><a href="#connect" data-toggle="tab" title="Chat"><i class="fa fa-comment-o"></i></a></li>
+  <li><a href="#settings" data-toggle="tab" title="Preferences"><i class="fa fa-cog"></i></a></li>
+</ul>
+<div class="clearfix"></div>
+<div class="tab-content">
+<div class="tab-pane active" id="feed">
+  <div class="tab-inner slimscroller">
+    <div class="clearfix"></div>
+    <div class="panel-group" id="collapse">
+      <div class="panel panel-default">
+        <div class="panel-heading ">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#rnotifications">
+              <i class="fa fa-umbrella"></i> Report
+              <span class="label bg-red-1 pull-right">5</span>
+
+            </a>
+          </h4>
+        </div>
+        <div id="rnotifications" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <ul class="list-unstyled" id="notification-list">
+              <li><a href="javascript:;"> <i class="fa fa-flash"></i>    &nbsp; Video Uploaded </a></li>
+              <li><a href="javascript:;"> <i class="fa fa-android"></i>   &nbsp; Users signed up </a></li>
+              <li><a href="javascript:;"> <i class="fa fa-bookmark"></i>   &nbsp; Video Uploaded</a></li>
+              <li><a href="javascript:;"><i class="fa fa-hdd-o"></i></span> &nbsp; Deadline for 1 project </a></li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading ">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#remails">
+              <i class="fa fa-envelope"></i> E-mails
+              <span class="label bg-orange-3 pull-right">5</span>
+
+            </a>
+          </h4>
+        </div>
+        <div id="remails" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <ul class="list-unstyled" id="chat-list">
+              <li><a href="#" >
+                <span class="chat-user-name">Dr.Syful Islam</span>
+                <span class="chat-user-avatar"><img src="images/teacher-2.jpg"></span>
+                <span class="datetime">jan 12</span>
+                                 <span class="chat-user-msg">we have to meet in hottelmeet in hottel meet in hottel!
+                                 </span>
+              </a>
+              </li>
+              <li><a href="#" >
+                <span class="chat-user-name">Kayum Islam</span>
+                <span class="chat-user-avatar"><img src="images/teacher-1.jpg"></span>
+                <span class="datetime">aug 19</span>
+                                 <span class="chat-user-msg">There is big problem in our hostel
+                                 </span>
+              </a>
+              </li>
+              <li><a href="#" >
+                <span class="chat-user-name">Asikul Sadman</span>
+                <span class="chat-user-avatar"><img src="images/teacher-3.jpg"></span>
+                <span class="datetime">sep 22</span>
+                                 <span class="chat-user-msg">We meet in my office by air
+                                 </span>
+              </a>
+              </li>
+              <li><a href="#" >
+                <span class="chat-user-name">Sanjida Sufa</span>
+                <span class="chat-user-avatar"><img src="images/teacher-4.jpg"></span>
+                <span class="datetime">3 min</span>
+                                 <span class="chat-user-msg">Our class routine is not published
+                                 </span>
+              </a>
+              </li>
+              <li><a href="#" >
+                <span class="chat-user-name">Monsur rahman</span>
+                <span class="chat-user-avatar"><img src="images/teacher-6.jpg"></span>
+                <span class="datetime">mar 23</span>
+                                 <span class="chat-user-msg">got your result now for
+                                 </span>
+              </a>
+              </li>
+            </ul>
+            <a class="btn btn-block btn-sm btn-primary">Go to inbox</a>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#rupdates">
+              <i class="fa fa-pencil-square-o"></i> Application
+              <span class="label bg-blue-3 pull-right">5</span>
+            </a>
+          </h4>
+        </div>
+        <div id="rupdates" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <ul class="list-unstyled" id="chat-list">
+              <li><a href="#" >
+                <span class="chat-user-name">Dr.Syful Islam</span>
+                <span class="chat-user-avatar"><img src="images/teacher-2.jpg"></span>
+                <span class="datetime">jan 12</span>
+                                 <span class="chat-user-msg">we have to meet in hottelmeet in hottel meet in hottel!
+                                 </span>
+              </a>
+              </li>
+              <li><a href="#" >
+                <span class="chat-user-name">Kayum Islam</span>
+                <span class="chat-user-avatar"><img src="images/teacher-1.jpg"></span>
+                <span class="datetime">aug 19</span>
+                                 <span class="chat-user-msg">There is big problem in our hostel
+                                 </span>
+              </a>
+              </li>
+              <li><a href="#" >
+                <span class="chat-user-name">Asikul Sadman</span>
+                <span class="chat-user-avatar"><img src="images/teacher-3.jpg"></span>
+                <span class="datetime">sep 22</span>
+                                 <span class="chat-user-msg">We meet in my office by air
+                                 </span>
+              </a>
+              </li>
+              <li><a href="#" >
+                <span class="chat-user-name">Sanjida Sufa</span>
+                <span class="chat-user-avatar"><img src="images/teacher-4.jpg"></span>
+                <span class="datetime">3 min</span>
+                                 <span class="chat-user-msg">Our class routine is not published
+                                 </span>
+              </a>
+              </li>
+              <li><a href="#" >
+                <span class="chat-user-name">Monsur rahman</span>
+                <span class="chat-user-avatar"><img src="images/teacher-6.jpg"></span>
+                <span class="datetime">mar 23</span>
+                                 <span class="chat-user-msg">got your result now for
+                                 </span>
+              </a>
+              </li>
+            </ul>
+            <a class="btn btn-block btn-sm btn-primary">More Application</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="tab-pane" id="connect">
+  <div class="tab-inner slimscroller">
+    <div class="search-right">
+      <input type="text" class="form-control" placeholder="Search">
+    </div>
+    <div class="panel-group" id="collapse">
+      <div class="panel panel-default" id="chat-panel">
+        <div class="panel-heading bg-darkblue-2">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#chat-coll">
+              <i class="fa fa-comment-o"></i> Online Friends
+              <span class="label bg-darkblue-1 pull-right">14</span>
+            </a>
+          </h4>
+        </div>
+        <div id="chat-coll" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <ul class="list-unstyled" id="chat-list">
+              <li><a href="javascript:;" class="online"><span class="chat-user-avatar"><img src="images/1.jpg"></span> <span class="chat-user-name">Dorothy Simons</span><span class="chat-user-msg">I wish I was a bird in the sky</span></a></li>
+              <li><a href="javascript:;" class="online"><span class="chat-user-avatar"><img src="images/2.jpg"></span> <span class="chat-user-name">John Malkovich</span><span class="chat-user-msg">You were the traitor</span></a></li>
+              <li><a href="javascript:;" class="online"><span class="chat-user-avatar"><img src="images/3.jpg"></span> <span class="chat-user-name">Jessica Simons</span><span class="chat-user-msg">Where is my mind</span></a></li>
+              <li><a href="javascript:;" class="away"><span class="chat-user-avatar"><img src="images/4.jpg"></span> <span class="chat-user-name">Jack Stallman</span><span class="chat-user-msg">Away since 13:32</span></a></li>
+              <li><a href="javascript:;" class="offline"><span class="chat-user-avatar"><img src="images/5.jpg"></span> <span class="chat-user-name">Neil Armstrong</span><span class="chat-user-msg" title="I am flying to the moon and back">I am flying to the moon and back</span></a></li>
+              <li><a href="javascript:;" class="offline"><span class="chat-user-avatar"><img src="images/6.jpg"></span> <span class="chat-user-name">Hollywood Studios</span><span class="chat-user-msg">Yes he definitely is!</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default" id="chat-panel">
+        <div class="panel-heading bg-darkblue-2">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+              <i class="icon-heart-3"></i> Friends
+              <span class="label bg-darkblue-1 pull-right">3</span>
+            </a>
+          </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <ul class="list-unstyled" id="chat-list">
+              <li><a href="javascript:;" class="online"><span class="chat-user-avatar"><img src="images/1.jpg"></span> <span class="chat-user-name">Dorothy Simons</span><span class="chat-user-msg">I wish I was a bird in the sky</span></a></li>
+              <li><a href="javascript:;" class="online"><span class="chat-user-avatar"><img src="images/2.jpg"></span> <span class="chat-user-name">John Malkovich</span><span class="chat-user-msg">You were the traitor</span></a></li>
+              <li><a href="javascript:;" class="online"><span class="chat-user-avatar"><img src="images/3.jpg"></span> <span class="chat-user-name">Jessica Simons</span><span class="chat-user-msg" title="Eminem - The Monster ft. Rihanna"><i class="icon-play"></i> Eminem - The Monster ft. Rihanna</span></a></li>
+              <li><a href="javascript:;" class="away"><span class="chat-user-avatar"><img src="images/4.jpg"></span> <span class="chat-user-name">Jack Stallman</span><span class="chat-user-msg">Away since 13:32</span></a></li>
+              <li><a href="javascript:;" class="offline"><span class="chat-user-avatar"><img src="images/5.jpg"></span> <span class="chat-user-name">Neil Armstrong</span><span class="chat-user-msg" title="I am flying to the moon and back">I am flying to the moon and back</span></a></li>
+              <li><a href="javascript:;" class="offline"><span class="chat-user-avatar"><img src="images/6.jpg"></span> <span class="chat-user-name">Hollywood Studios</span><span class="chat-user-msg">Yes he definitely is!</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tab-pane" id="settings">
+  <div class="tab-inner slimscroller">
+    <div class="col-sm-12">
+      <h3>Preferences</h3>
+      <div class="row">
+        <div class="col-xs-8">
+          Live data updates
+        </div>
+        <div class="col-xs-4">
+          <input type="checkbox" class="ios-switch ios-switch-success ios-switch-sm" checked />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          Live feeds
+        </div>
+        <div class="col-xs-4">
+          <input type="checkbox" class="ios-switch ios-switch-success ios-switch-sm" checked />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          Sync data to cloud
+        </div>
+        <div class="col-xs-4">
+          <input type="checkbox" class="ios-switch ios-switch-success ios-switch-sm" checked />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          Keep activity record
+        </div>
+        <div class="col-xs-4">
+          <input type="checkbox" class="ios-switch ios-switch-danger ios-switch-sm" checked />
+        </div>
+      </div>
+      <h4>Other Settings</h4>
+      <div class="row">
+        <div class="col-xs-12">
+          <label class="checkboxw"><input type="checkbox" checked> Autosave settings</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <label class="checkboxw"><input type="checkbox"> Always online</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<!-- Right Sidebar End -->
+
+<!-- Start right content -->
+<div class="content-page">
+<ol class="breadcrumb">
+
+  <div id='cssmenu'>
+    <ul>
+      <li>
+        <a href='#'>
+          <div class="icone-button">
+            <i style="color:#7266BA;" class="fa fa-user"></i>
+            <span style="background-color:#23B7E5;" >13</span>
+          </div>
+          <span>Admission</span>
+        </a>
+      </li>
+      <li><a href='#'>
+        <div class="icone-button">
+          <i style="color:#23B7E5;" class="fa fa-list"></i>
+          <span style="background-color:#7266BA;">13</span>
+        </div>
+        <span>Attandance</span>
+      </a>
+      </li>
+
+      <li><a href='#'>
+        <div class="icone-button">
+          <i style="color:#F05050;"  class="fa fa-android"></i>
+          <span style="background-color:#27C24C;" >10%</span>
+        </div>
+        <span>Result</span>
+      </a>
+      </li>
+      <li><a href='#'>
+        <div class="icone-button">
+          <i style="color:#7266BA;" class="fa fa-bell-o"></i>
+
+        </div>
+        <span>Notice</span>
+      </a>
+      </li>
+      <li><a href='#'>
+        <div class="icone-button">
+          <i style="color:#23B7E5;" class="fa fa-windows"></i>
+
+        </div>
+        <span>Routine</span>
+      </a>
+      </li>
+      <li><a href='#'>
+        <div class="icone-button">
+          <i style="color:#F05050;" class="fa fa-barcode"></i>
+          <span style="background-color:#27C24C;">5%</span>
+        </div>
+        <span>Fee</span>
+      </a>
+      </li>
+      <li><a href='#'>
+        <div class="icone-button">
+          <i style="color:#7266BA;" class="fa fa-file-o"></i>
+          <span style="background-color:#23B7E5;">5</span>
+        </div>
+        <span>Payroll</span>
+      </a>
+      </li>
+      <li><a href='#'>
+        <div class="icone-button">
+          <i style="color:#23B7E5;" class="fa fa-bar-chart-o"></i>
+          <span style="background-color:#7266BA;">5</span>
+        </div>
+        <span>Accounting</span>
+      </a>
+      </li>
+      <li><a href='#'>
+        <div class="icone-button">
+          <i class="fa fa-book"></i>
+          <span>5</span>
+        </div>
+        <span>Library</span>
+      </a>
+      </li>
+      <li><a href='#'>
+        <div class="icone-button">
+          <i class="fa fa-pencil-square-o"></i>
+          <span>5</span>
+        </div>
+        <span>Education</span>
+      </a>
+      </li>
+
+    </ul>
+  </div>
+
+</ol>
+<div  class="content profile-banner" >
+  <div class="col-sm-3 avatar-container">
+    <img src="images/user5.jpg" class=" profile-avatar" alt="User avatar">
+  </div>
+  <div class="col-sm-12 profile-actions text-right">
+    <button type="button" class="btn btn-google-plus btn-sm"><i class="fa fa-bookmark"></i> Class xi </button>
+    <button type="button" class="btn btn-blue-3 btn-sm"><i class="fa fa-certificate"></i> 101-33-184</button>
+    <button type="button" class="btn btn-blue-3 btn-sm"><i class="fa fa-ellipsis-v"></i></button>
+  </div>
+</div>
+<div class="content">
+
+<div class="row">
+<div class="col-sm-3">
+  <!-- Begin user profile -->
+  <div class="user-profile-2">
+    <h4 class="text-center"> <b>Jannat jui Abida </b></h4>
+
+
+    <ul class="list-group">
+      <li class="list-group-item">
+
+        <span class="badge label label-success ">1,245 tk</span>
+        Total paid
+      </li>
+      <li class="list-group-item">
+        <span class="badge label label-warning ">245 tk</span>
+        Due Fee
+      </li>
+      <li class="list-group-item">
+        <span class="badge label label-danger">Unpaid</span>
+        Fee Current Month
+      </li>
+    </ul>
+
+    <!-- User button -->
+
+  </div><!-- End div .box-info -->
+
+
+
+  <!-- Start info box -->
+  <div class="row top-summary">
+
+    <div class="col-lg-12 col-md-6">
+      <div class="widget lightblue-4">
+        <div class="widget-content padding">
+          <div class="widget-icon">
+
+          </div>
+          <div class="text-box">
+            <p class="maindata-1"><i class="fa fa-th-large"></i> <a href=""> TOTAL ATTENDANCE </a></p>
+            <h3><span class="animate-number" data-value="6399" data-duration="3000">0</span> Dayes</h3>
+
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <div class="widget-footer1">
+          <div class="row">
+            <div class="col-sm-12">
+              <i class="fa fa-caret-right rel-change"></i> <b>Presant 88% </b>
+            </div>
+            <div class="col-sm-12">
+              <i class="fa fa-caret-right rel-change"></i> <b>Absent 12% </b>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-6">
+      <div class="widget lightblue-4">
+        <div class="widget-content padding">
+          <div class="widget-icon">
+
+          </div>
+          <div class="text-box">
+            <p class="maindata-1"><i class="fa fa-th-list"> </i>  <a href="#">RECENT EXAM REPORT </a></p>
+            <h3><span class="animate-number"  ></span>GPA- A+</h3>
+
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <div class="widget-footer1">
+          <div class="row">
+            <div class="col-sm-12">
+              <i class="fa fa-caret-right rel-change"></i> <b>Total Mark 600 / 800			</b></div>
+            <div class="col-sm-12">
+              <i class="fa fa-caret-right rel-change"></i> <b>Position  : 3rd</b>
+            </div>
+
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-6">
+      <div class="widget">
+        <div class="widget-content img-responsive">
+          <!--<img style="width:100%; padding:3px;" src="images/map.jpg">-->
+
+        </div>
+
+      </div>
+    </div><!-- End of col-lg-12 col-md-6 -->
+    <div class="col-lg-12 col-md-6 info-list">
+
+      <ul>
+        <li><a href="#"> <i class="fa fa-area-chart"></i> Payment information</a></li>
+        <li><a href="#"> <i class="fa fa-book"></i> Acdemic Result </a></li>
+        <li><a href="#"> <i class="fa fa-pencil-square-o"></i> Application </a></li>
+        <li><a href="#"> <i class="fa fa-envelope"></i> Mail </a></li>
+        <li><a href="#"> <i class="fa fa-calendar-o"></i> Class routine </a></li>
+        <li><a href="#"> <i class="fa fa-calendar"></i> Exam  routine </a></li>
+      </ul>
+
+    </div><!-- End of col-lg-12 col-md-6 -->
+
+
+
+
+  </div><!-- End of info box -->
+
+  <!-- Begin user profile -->
+</div><!-- End div .col-sm-4 -->
+
+
+<div class="col-sm-9">
+<div class="widget widget-tabbed">
+<!-- Nav tab -->
+<ul class="nav nav-tabs nav-justified">
+  <li class="active"><a href="#my-timeline" data-toggle="tab"><i class="fa fa-inbox"></i> Timeline</a></li>
+  <li><a href="#about" data-toggle="tab"><i class="fa fa-user"></i> About</a></li>
+  <li><a href="#user-activities" data-toggle="tab"><i class="fa fa-laptop"></i> Activities</a></li>
+  <li><a href="#mymessage" data-toggle="tab"><i class="fa fa-envelope"></i> Message</a></li>
+</ul>
+<!-- End nav tab -->
+
+<!-- Tab panes -->
+<div class="tab-content">
+
+
+<!-- Tab timeline -->
+<div class="tab-pane animated active fadeInRight" id="my-timeline">
+  <div class="user-profile-content">
+    <div style="border:1px solid #EDEDED; border-radius:3px; padding:10px;" class="widget">
+
+      <ul style="margin:0" id="demo5" class="nav nav-tabs nav-simple">
+        <li class="active">
+          <a href="#demo5-home" data-toggle="tab"><i class="fa fa-pencil-square-o"></i> Update Notice</a>
+        </li>
+        <li class="">
+          <a href="#demo5-profile" data-toggle="tab"><i class="fa fa-signal"></i> Sent sms</a>
+        </li>
+        <li class="">
+          <a href="#demo5-dropdown1" data-toggle="tab"> <i class="fa fa-fax"></i> Something <span class="label bg-red-1">New</span></a>
+        </li>
+
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane fade active in the-timeline" id="demo5-home">
+          <form role="form" class="post-to-timeline">
+            <textarea class="form-control"  placeholder="Notice Post to timeline..."></textarea>
+
+            <div class="col-sm-6">
+              <a class="btn btn-sm btn-primary" data-toggle="tooltip" title="Add photo to  post"><i class="fa fa-camera"></i></a>
+              <a class="btn btn-sm btn-primary" data-toggle="tooltip" title="Add photo to  post"><i class="fa fa-video-camera"></i></a>
+              <a class="btn btn-sm btn-primary" data-toggle="tooltip" title="Add photo to  post"><i class="fa fa-map-marker"></i></a>
+            </div>
+            <div class="col-sm-6 text-right"><button type="submit" class="btn btn-blue-3"><i class="fa fa-retweet"></i> Post</button></div>
+
+          </form>
+        </div> <!-- / .tab-pane -->
+        <div class="tab-pane fadein the-timeline" id="demo5-profile">
+          <form role="form" class="post-to-timeline">
+            <textarea class="form-control"  placeholder="Wright a message..."></textarea>
+            <div class="col-sm-6">
+              <a class="btn btn-sm btn-primary" data-toggle="tooltip" title="Add photo to  post"><i class="fa fa-camera"></i></a>
+              <a class="btn btn-sm btn-primary" data-toggle="tooltip" title="Add photo to  post"><i class="fa fa-video-camera"></i></a>
+              <a class="btn btn-sm btn-primary" data-toggle="tooltip" title="Add photo to  post"><i class="fa fa-map-marker"></i></a>
+            </div>
+            <div class="col-sm-6 text-right"><button type="submit" class="btn btn-blue-3"><i class="fa fa-retweet"></i> Sent</button></div>
+          </form>
+        </div> <!-- / .tab-pane -->
+        <div class="tab-pane fade the-timeline" id="demo5-dropdown1">
+          <form role="form" class="post-to-timeline">
+            <textarea class="form-control"  placeholder="Notice Post to timeline..."></textarea>
+
+            <div  class="col-sm-6">
+              <a class="btn btn-sm btn-primary" data-toggle="tooltip" title="Add photo to  post"><i class="fa fa-camera"></i></a>
+              <a class="btn btn-sm btn-primary" data-toggle="tooltip" title="Add photo to  post"><i class="fa fa-video-camera"></i></a>
+              <a class="btn btn-sm btn-primary" data-toggle="tooltip" title="Add photo to  post"><i class="fa fa-map-marker"></i></a>
+            </div>
+            <div class="col-sm-6 text-right"><button type="submit" class="btn btn-blue-3"><i class="fa fa-retweet"></i> Post</button></div>
+
+          </form>
+        </div> <!-- / .tab-pane -->
+
+      </div> <!-- / .tab-content -->
+    </div><!-- / total .tab-content -->
+
+    <!-- Begin timeline -->
+    <div class="the-timeline">
+
+      <ul>
+        <li>
+
+          <h4>Sayful Islam <i class="fa fa-home"></i><span> Main Campus</span> </h4>
+          <h6>31 December 2014  <span>|  BY ADMIN</span> </h6>
+          <p>
+            হঠাৎমোবাইল এর চার্জ শেষ? ভালো পাওয়ার ব্যাংক খুজছেন? নিয়ে নিন টপ ক্লাস ব্র্যান্ড অরিজিনাল সাওমি (MI) এর একটি পাওয়ার ব্যাংক!!!
+            বি।দ্র। সস্তার ৩ অবস্থা...... ৪০০/৫০০টাকা এর নকল সাওমি পাওয়ার ব্যাংক কিনে মোবাইল এর বারোটা বাজাবেন না!
+            ব্র্যান্ড: সাওমি/মি (MI/Xaomi)
+            প্রোডাক্টঃ পাওয়ার ব্যাংক
+            ধারন ক্ষমতাঃ ১০৪০০ মিলিঅ্যাম্পিয়ার
+            রংঃ কালো/পিঙ্ক/নীল/গোল্ডেন/হাল্কা সবুজ
+            দামঃ ১৩০০ টাকা (ফিক্সড)
+            লোকেশনঃ মিরপুর ১, শ্যামলী, কল্যাণপুর, (ফ্রী ডেলিভারি)
+            (ঢাকার মধ্যে অন্যান্য জায়গায় ৫০ টাকা ডেলিভারি চার্জ)
+          </p>
+        </li>
+        <li>
+
+          <h4>Sayful Islam <i class="fa fa-home"></i><span> Main Campus</span> </h4>
+          <h6>31 December 2014  <span>|  BY ADMIN</span> </h6>
+          <div class="videoWrapper">
+            <iframe src="//player.vimeo.com/video/85847275?title=0&amp;byline=0&amp;portrait=0"></iframe>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+          </p>
+        </li>
+        <li>
+
+          <h4>Sayful Islam <i class="fa fa-home"></i><span> Main Campus</span> </h4>
+          <h6>31 December 2014  <span>|  BY ADMIN</span> </h6>
+          <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/132890481&amp;color=ff9900&amp;auto_play=false&amp;hide_related=false&amp;show_artwork=true"></iframe>
+          <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+          </p>
+        </li>
+
+        <li>
+          <h4>Sayful Islam <i class="fa fa-home"></i><span> Main Campus</span> </h4>
+          <h6>31 December 2014  <span>|  BY ADMIN</span> </h6>
+          <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+          </p>
+        </li>
+        <li>
+          <h4>Sayful Islam <i class="fa fa-home"></i><span> Main Campus</span> </h4>
+          <h6>31 December 2014  <span>|  BY ADMIN</span> </h6>
+          <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+          </p>
+        </li>
+      </ul>
+    </div><!-- End div .the-timeline -->
+    <!-- End timeline -->
+  </div><!-- End div .user-profile-content -->
+</div><!-- End div .tab-pane -->
+<!-- End Tab timeline -->
+
+<!-- Tab about -->
+<div class="tab-pane animated fadeInRight" id="about">
+  <div class="user-profile-content">
+    <h5><strong>ABOUT</strong> ME</h5>
+    <p>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+    </p>
+    <hr />
+    <div class="row">
+      <div  class="col-sm-3 profile-info">
+        <ul>
+          <li class="profile-active"><a href="#">Basic Info</a></li>
+          <li><a href="#">Guardian Info</a></li>
+          <li><a href="#">Contact Info</a></li>
+        </ul>
+      </div>
+      <div  class="col-sm-9 profile-details">
+        <li><strong>Personal Information</strong></li>
+        <li><a>Name</a>
+          <span>Nusrat jahan</span>
+        </li>
+        <li><a>ID</a>
+          <span>101-33-184</span>
+        </li>
+        <li><a>Class</a>
+          <span>xi</span>
+        </li>
+        <li><a>Section</a>
+          <span>A</span>
+        </li>
+        <li><a>Mobile</a>
+          <span>+8801676152414</span>
+        </li>
+
+        <li><a>Date of Year</a>
+          <span>1 January</span>
+        </li>
+        <li><a>Year of Birth</a>
+          <span>2005</span>
+        </li>
+        <li><a>Gender</a>
+          <span>Male</span>
+        </li>
+        <li><a>Relagion</a>
+          <span>Islam</span>
+        </li>
+        <li><a>User id</a>
+          <span>janta-184</span>
+        </li>
+        <li><a>Email</a>
+          <span>janta-184@schs.com</span>
+        </li>
+
+        <li><strong>Father Information</strong></li>
+
+        <li><a>Name</a>
+          <span>Abdus Samad</span>
+        </li>
+        <li><a>Profesion</a>
+          <span>Business</span>
+        </li>
+        <li><a>National id</a>
+          <span>1002827180272</span>
+        </li>
+        <li><a>Phone</a>
+          <span> +8801676152414</span>
+        </li>
+
+        <li><a>Mobile</a>
+          <span> +8801676152414</span>
+        </li>
+
+        <li><a>Email</a>
+          <span>janta-184@schs.com</span>
+        </li>
+        <li><strong>Mother Information</strong></li>
+
+        <li><a>Name</a>
+          <span>Nusrat Fahima</span>
+        </li>
+        <li><a>Profesion</a>
+          <span>Houswife</span>
+        </li>
+        <li><a>National id</a>
+          <span>1002827180272</span>
+        </li>
+
+        <li><a>Mobile</a>
+          <span>+8801676152414</span>
+        </li>
+
+        <li><a>Email</a>
+          <span>janta-184@schs.com</span>
+        </li>
+
+      </div>
+    </div><!-- End div .row -->
+  </div><!-- End div .user-profile-content -->
+</div><!-- End div .tab-pane -->
+<!-- End Tab about -->
+
+
+<!-- Tab user activities -->
+<div class="tab-pane animated fadeInRight" id="user-activities">
+  <div class="scroll-user-widget">
+    <ul class="media-list">
+      <li class="media">
+        <a href="#fakelink">
+          <p><strong>John Doe</strong> Uploaded a photo <strong>&#34;DSC000254.jpg&#34;</strong>
+            <br /><i>2 minutes ago</i></p>
+        </a>
+      </li>
+      <li class="media">
+        <a href="#fakelink">
+          <p><strong>John Doe</strong> Created an photo album  <strong>&#34;Indonesia Tourism&#34;</strong>
+            <br /><i>8 minutes ago</i></p>
+        </a>
+      </li>
+      <li class="media">
+        <a href="#fakelink">
+          <p><strong>Annisa</strong> Posted an article  <strong>&#34;Yogyakarta never ending Asia&#34;</strong>
+            <br /><i>an hour ago</i></p>
+        </a>
+      </li>
+      <li class="media">
+        <a href="#fakelink">
+          <p><strong>Ari Rusmanto</strong> Added 3 products
+            <br /><i>3 hours ago</i></p>
+        </a>
+      </li>
+      <li class="media">
+        <a href="#fakelink">
+          <p><strong>Hana Sartika</strong> Send you a message  <strong>&#34;Lorem ipsum dolor...&#34;</strong>
+            <br /><i>12 hours ago</i></p>
+        </a>
+      </li>
+      <li class="media">
+        <a href="#fakelink">
+          <p><strong>Johnny Depp</strong> Updated his avatar
+            <br /><i>Yesterday</i></p>
+        </a>
+      </li>
+      <li class="media">
+        <a href="#fakelink">
+          <p><strong>John Doe</strong> Uploaded a photo <strong>&#34;DSC000254.jpg&#34;</strong>
+            <br /><i>2 minutes ago</i></p>
+        </a>
+      </li>
+      <li class="media">
+        <a href="#fakelink">
+          <p><strong>John Doe</strong> Created an photo album  <strong>&#34;Indonesia Tourism&#34;</strong>
+            <br /><i>8 minutes ago</i></p>
+        </a>
+      </li>
+      <li class="media">
+        <a href="#fakelink">
+          <p><strong>Annisa</strong> Posted an article  <strong>&#34;Yogyakarta never ending Asia&#34;</strong>
+            <br /><i>an hour ago</i></p>
+        </a>
+      </li>
+      <li class="media">
+        <a href="#fakelink">
+          <p><strong>Ari Rusmanto</strong> Added 3 products
+            <br /><i>3 hours ago</i></p>
+        </a>
+      </li>
+      <li class="media">
+        <a href="#fakelink">
+          <p><strong>Hana Sartika</strong> Send you a message  <strong>&#34;Lorem ipsum dolor...&#34;</strong>
+            <br /><i>12 hours ago</i></p>
+        </a>
+      </li>
+      <li class="media">
+        <a href="#fakelink">
+          <p><strong>Johnny Depp</strong> Updated his avatar
+            <br /><i>Yesterday</i></p>
+        </a>
+      </li>
+    </ul>
+  </div><!-- End div .scroll-user-widget -->
+</div><!-- End div .tab-pane -->
+<!-- End Tab user activities -->
+
+<!-- Tab user messages -->
+<div class="tab-pane animated fadeInRight" id="mymessage">
+  <div class="scroll-user-widget">
+    <ul class="media-list">
+      <li class="media">
+        <a class="pull-left" href="#fakelink">
+          <img class="media-object" src="assets/img/avatar/2.jpg" alt="Avatar">
+        </a>
+        <div class="media-body">
+          <h4 class="media-heading"><a href="#fakelink">John Doe</a> <small>Just now</small></h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </div>
+      </li>
+      <li class="media">
+        <a class="pull-left" href="#fakelink">
+          <img class="media-object" src="assets/img/avatar/1.jpg" alt="Avatar">
+        </a>
+        <div class="media-body">
+          <h4 class="media-heading"><a href="#fakelink">Annisa</a> <small>Yesterday at 04:00 AM</small></h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus</p>
+        </div>
+      </li>
+      <li class="media">
+        <a class="pull-left" href="#fakelink">
+          <img class="media-object" src="assets/img/avatar/5.jpg" alt="Avatar">
+        </a>
+        <div class="media-body">
+          <h4 class="media-heading"><a href="#fakelink">Rusmanovski</a> <small>January 17, 2014 05:35 PM</small></h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </div>
+      </li>
+      <li class="media">
+        <a class="pull-left" href="#fakelink">
+          <img class="media-object" src="assets/img/avatar/4.jpg" alt="Avatar">
+        </a>
+        <div class="media-body">
+          <h4 class="media-heading"><a href="#fakelink">Ari Rusmanto</a> <small>January 17, 2014 05:35 PM</small></h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </div>
+      </li>
+      <li class="media">
+        <a class="pull-left" href="#fakelink">
+          <img class="media-object" src="assets/img/avatar/3.jpg" alt="Avatar">
+        </a>
+        <div class="media-body">
+          <h4 class="media-heading"><a href="#fakelink">Jenny Doe</a> <small>January 17, 2014 05:35 PM</small></h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </div>
+      </li>
+      <li class="media">
+        <a class="pull-left" href="#fakelink">
+          <img class="media-object" src="assets/img/avatar/2.jpg" alt="Avatar">
+        </a>
+        <div class="media-body">
+          <h4 class="media-heading"><a href="#fakelink">John Doe</a> <small>Just now</small></h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </div>
+      </li>
+      <li class="media">
+        <a class="pull-left" href="#fakelink">
+          <img class="media-object" src="assets/img/avatar/1.jpg" alt="Avatar">
+        </a>
+        <div class="media-body">
+          <h4 class="media-heading"><a href="#fakelink">Annisa</a> <small>Yesterday at 04:00 AM</small></h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus</p>
+        </div>
+      </li>
+      <li class="media">
+        <a class="pull-left" href="#fakelink">
+          <img class="media-object" src="assets/img/avatar/5.jpg" alt="Avatar">
+        </a>
+        <div class="media-body">
+          <h4 class="media-heading"><a href="#fakelink">Rusmanovski</a> <small>January 17, 2014 05:35 PM</small></h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </div>
+      </li>
+      <li class="media">
+        <a class="pull-left" href="#fakelink">
+          <img class="media-object" src="assets/img/avatar/4.jpg" alt="Avatar">
+        </a>
+        <div class="media-body">
+          <h4 class="media-heading"><a href="#fakelink">Ari Rusmanto</a> <small>January 17, 2014 05:35 PM</small></h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </div>
+      </li>
+      <li class="media">
+        <a class="pull-left" href="#fakelink">
+          <img class="media-object" src="assets/img/avatar/3.jpg" alt="Avatar">
+        </a>
+        <div class="media-body">
+          <h4 class="media-heading"><a href="#fakelink">Jenny Doe</a> <small>January 17, 2014 05:35 PM</small></h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </div>
+      </li>
+    </ul>
+  </div><!-- End div .scroll-user-widget -->
+</div><!-- End div .tab-pane -->
+<!-- End Tab user messages -->
+</div><!-- End div .tab-content -->
+</div><!-- End div .box-info -->
+</div>
+</div>
+
+
+<!-- Footer Start -->
+
+<footer>
+  Huban Creative &copy; 2014
+  <div class="footer-links pull-right">
+    <a href="#">About</a><a href="#">Support</a><a href="#">Terms of Service</a><a href="#">Legal</a><a href="#">Help</a><a href="#">Contact Us</a>
+  </div>
+</footer>
+<!-- Footer End -->
+</div>
+<!-- ============================================================== -->
+<!-- End content here -->
+<!-- ============================================================== -->
+
+</div>
+<!-- End right content -->
+
+</div>
+<div id="contextMenu" class="dropdown clearfix">
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" style="display:block;position:static;margin-bottom:5px;">
+    <li><a tabindex="-1" href="javascript:;" data-priority="high"><i class="fa fa-circle-o text-red-1"></i> High Priority</a></li>
+    <li><a tabindex="-1" href="javascript:;" data-priority="medium"><i class="fa fa-circle-o text-orange-3"></i> Medium Priority</a></li>
+    <li><a tabindex="-1" href="javascript:;" data-priority="low"><i class="fa fa-circle-o text-yellow-1"></i> Low Priority</a></li>
+    <li><a tabindex="-1" href="javascript:;" data-priority="none"><i class="fa fa-circle-o text-lightblue-1"></i> None</a></li>
+  </ul>
+</div>
+<!-- End of page -->
+<!-- the overlay modal element -->
+<div class="md-overlay"></div>
+<!-- End of eoverlay modal -->
+<script>
+    var resizefunc = [];
+</script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+<script src="js/jquery.ui.touch-punch.min.js"></script>
+<script src="js/detect.js"></script>
+<script src="js/jquery.animateNumbers.js"></script>
+<script src="js/ios7.switch.js"></script>
+<script src="js/fastclick.js"></script>
+<script src="js/jquery.blockUI.js"></script>
+<script src="js/bootbox.min.js"></script>
+<script src="js/jquery.slimscroll.js"></script>
+<script src="js/jquery-sparkline.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/modalEffects.js"></script>
+<script src="js/sortable.min.js"></script>
+<script src="js/bootstrap.file-input.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/pace.min.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/icheck.min.js"></script>
+
+<!-- Demo Specific JS Libraries -->
+<script src="js/prettify.js"></script>
+
+<script src="js/init.js"></script>
+<!-- Page Specific JS Libraries -->
+<script src="js/d3.v3.js"></script>
+<script src="js/rickshaw.min.js"></script>
+<script src="js/raphael-min.js"></script>
+<script src="js/morris.min.js"></script>
+<script src="js/jquery.knob.js"></script>
+<script src="js/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="js/jquery-jvectormap-world-mill-en.js"></script>
+<script src="js/clock.js"></script>
+<script src="js/jquery.easypiechart.min.js"></script>
+<script src="js/jquery.simpleWeather-2.6.min.js"></script>
+<script src="js/bootstrap-editable.min.js"></script>
+<script src="js/bic_calendar.min.js"></script>
+<script src="js/calculator.js"></script>
+<script src="js/apps/todo.js"></script>
+<script src="js/apps/notes.js"></script>
+</body>
+</html>

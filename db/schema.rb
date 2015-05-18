@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150509113125) do
+ActiveRecord::Schema.define(version: 20150517111628) do
 
   create_table "campus", force: true do |t|
     t.string   "name"
@@ -76,6 +76,8 @@ ActiveRecord::Schema.define(version: 20150509113125) do
     t.integer  "campus_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "profilepic"
+    t.string   "coverpic"
   end
 
   add_index "students", ["campus_id"], name: "index_students_on_campus_id"

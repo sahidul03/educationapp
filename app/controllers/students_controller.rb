@@ -4,4 +4,8 @@ class StudentsController < ApplicationController
 
   end
 
+  def student_profile
+
+  end
+
 end

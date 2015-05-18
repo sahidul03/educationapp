@@ -1,3 +1,4 @@
+<div class="content">
 <div  class="row">
   <div  class="col-lg-8 portlets">
     <div  class="widget">
@@ -112,7 +113,12 @@
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                       </div>
                       <div class="form-group">
-                        <%= file_field_tag :student_photo , :class=> 'btn btn-default', :title=>"Search for a image to add" %>
+                        <%= f.file_field :profilepic , :class=> 'btn btn-default', :title=>"Search for a image to add" %>
+                        <!--<input type="file" class="btn btn-default" title="Search for a file to add">-->
+                        <!--<p class="help-block">Example block-level help text here.</p>-->
+                      </div>
+                      <div class="form-group">
+                        <%= f.file_field :coverpic , :class=> 'btn btn-default', :title=>"Search for a image to add" %>
                         <!--<input type="file" class="btn btn-default" title="Search for a file to add">-->
                         <!--<p class="help-block">Example block-level help text here.</p>-->
                       </div>
@@ -133,7 +139,7 @@
     </div>
   </div>
 </div>
-
+</div>
 <script src="/js/jquery-1.11.1.min.js"></script>
 <script>
   var admission_dropdown=new function(){
