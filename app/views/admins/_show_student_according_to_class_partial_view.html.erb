@@ -1,0 +1,19 @@
+<% @all_students_AC.each do |st| %>
+    <div class="col-sm-6">
+      <div class="widget border-student">
+        <div class="widget-content">
+          <div class="student-list">
+            <%= image_tag(st.profilepic,:class => 'img-responsive') if st.profilepic %>
+          </div>
+          <div class="student-details">
+            <small class="text-left">
+              <h4><b><%= link_to  st.first_name+' '+st.last_name, student_profile_admins_path(st.user.id)%></b></h4>
+              <p><strong>User Id :<%= st.user.id %></strong></p>
+              <p><strong>User name :<%= st.user.user_name %></strong></p>
+              <p><b> Class: <%= st.shifts.first.semester.year.level.name unless st.shifts.first.nil? %> , Roll : <%= st.id %> </b></p>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150517111628) do
+ActiveRecord::Schema.define(version: 20150523173904) do
 
   create_table "campus", force: true do |t|
     t.string   "name"
@@ -61,6 +61,14 @@ ActiveRecord::Schema.define(version: 20150517111628) do
   end
 
   add_index "shifts", ["semester_id"], name: "index_shifts_on_semester_id"
+
+  create_table "shifts_students", force: true do |t|
+    t.integer "shift_id"
+    t.integer "student_id"
+  end
+
+  add_index "shifts_students", ["shift_id"], name: "index_shifts_students_on_shift_id"
+  add_index "shifts_students", ["student_id"], name: "index_shifts_students_on_student_id"
 
   create_table "students", force: true do |t|
     t.string   "first_name"

@@ -113,11 +113,13 @@
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                       </div>
                       <div class="form-group">
+                        <label for="exampleInputPassword1">Profile Photo</label>
                         <%= f.file_field :profilepic , :class=> 'btn btn-default', :title=>"Search for a image to add" %>
                         <!--<input type="file" class="btn btn-default" title="Search for a file to add">-->
                         <!--<p class="help-block">Example block-level help text here.</p>-->
                       </div>
                       <div class="form-group">
+                        <label for="exampleInputPassword1">Cover Photo</label>
                         <%= f.file_field :coverpic , :class=> 'btn btn-default', :title=>"Search for a image to add" %>
                         <!--<input type="file" class="btn btn-default" title="Search for a file to add">-->
                         <!--<p class="help-block">Example block-level help text here.</p>-->
@@ -145,7 +147,7 @@
   var admission_dropdown=new function(){
       this.class_select=new function(){
           var select_class_dropdown=$('#select_level');
-          select_class_dropdown.change(function(){
+          select_class_dropdown.click(function(){
               var level_id=select_class_dropdown.val();
               if(level_id){
                   $.ajax({
@@ -158,7 +160,7 @@
       };
       this.Year_select=new function(){
           var select_year_dropdown=$('#select_year');
-          select_year_dropdown.change(function(){
+          select_year_dropdown.click(function(){
               var year_id=select_year_dropdown.val();
               if(year_id){
                   $.ajax({
@@ -172,7 +174,7 @@
       };
       this.semester_select=new function(){
           var select_semester_dropdown=$('#select_semester');
-          select_semester_dropdown.change(function(){
+          select_semester_dropdown.click(function(){
               var semester_id=select_semester_dropdown.val();
               if(semester_id){
                   $.ajax({

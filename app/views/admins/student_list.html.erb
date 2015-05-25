@@ -1,0 +1,522 @@
+<div class="content ">
+<!-- Start info box -->
+<div  class="row   top-summary">
+  <div class="col-lg-3 col-md-6">
+    <div class="widget lightblue-1">
+      <div class="widget-content padding">
+        <div class="widget-icon">
+
+        </div>
+        <div class="text-box">
+          <p class="maindata"><b>TOTAL Payment</b></p>
+          <h2><span class="animate-number" data-value="60000000" data-duration="3000">0</span>Tk</h2>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="widget-footer">
+        <div class="row">
+          <div class="col-sm-12">
+            <i class="fa fa-caret-up rel-change"></i><b> Payment In THIS MONTH</b> 89%
+          </div>
+          <div class="col-sm-12">
+            <i class="fa fa-caret-down rel-change"></i><b> Payment In THIS year</b> 11%
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6">
+    <div class="widget green-1">
+      <div class="widget-content padding">
+        <div class="widget-icon">
+
+        </div>
+        <div class="text-box">
+          <p class="maindata"> <b>Payment In THIS year</b></p>
+          <h2><span class="animate-number" data-value="1200" data-duration="3000">0</span>Tk</h2>
+
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="widget-footer">
+        <div class="row">
+          <div class="col-sm-12">
+            <i class="fa fa-caret-up rel-change"></i><b> Present of Collaction</b> 89%
+          </div>
+          <div class="col-sm-12">
+            <i class="fa fa-caret-down rel-change"></i><b> Present of unpaid</b> 11%
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6">
+    <div class="widget orange-4">
+      <div class="widget-content padding">
+        <div class="widget-icon">
+
+        </div>
+        <div class="text-box">
+          <p class="maindata"><b> Payment In THIS MONTH</b></p>
+          <h2><span class="animate-number" data-value="600" data-duration="3000">0</span>Tk</h2>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="widget-footer">
+        <div class="row">
+          <div class="col-sm-12">
+            <i class="fa fa-caret-up rel-change"></i><b> Present of Collaction</b> 89%
+          </div>
+          <div class="col-sm-12">
+            <i class="fa fa-caret-down rel-change"></i><b> Present of unpaid</b> 11%
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6">
+    <div class="widget darkblue-2">
+      <div class="widget-content padding">
+        <div class="widget-icon">
+
+        </div>
+        <div class="text-box">
+          <p class="maindata"> <b>Payable </b></p>
+          <h2><span class="animate-number" data-value="8000" data-duration="3000">0</span>Tk</h2>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="widget-footer">
+        <div class="row">
+          <div class="col-sm-12">
+            <i class="fa fa-caret-up rel-change"></i><b> Present of Collaction</b> 89%
+          </div>
+          <div class="col-sm-12">
+            <i class="fa fa-caret-down rel-change"></i><b> Present of unpaid</b> 11%
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- End of info box -->
+
+<div class="row">
+<div class="col-lg-12 portlets">
+<div id="website-statistics1" class="widget">
+<div class="widget-header transparent">
+  <h2><i class="fa fa-bar-chart"></i> <strong>Student </strong> Information</h2>
+  <div class="additional-btn">
+    <a href="#" class="hidden reload"><i class="fa fa-repeat"></i></a>
+    <a class="hidden" id="dropdownMenu1" data-toggle="dropdown">
+      <i class="fa fa-cogs"></i>
+    </a>
+    <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1">
+      <li><a href="#">Action</a></li>
+      <li><a href="#">Another action</a></li>
+      <li><a href="#">Something else here</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Separated link</a></li>
+    </ul>
+    <a href="#" class="widget-popout hidden tt" title="Pop Out/In"><i class="fa fa-chevron-up "></i></a>
+    <a href="#" class="widget-maximize hidden"><i class="fa fa-arrows"></i></a>
+    <a href="#" class="widget-toggle"><i class="fa fa-chevron-down"></i></a>
+    <a href="#" class="widget-close"><i class="fa fa-close"></i></a>
+  </div>
+</div>
+<div class="widget-content">
+
+  <div class="bill-to-receipt">
+    <div class="row">
+      <div class="col-sm-6">
+        <small class="text-left">
+          <h4><strong><a href="#">Admin : <%= current_user.name %> </a></strong></h4>
+          <p><strong>TOTAL STUDENT : </strong> # <%= Student.all.count if Student.all.any? %></p>
+          <p><strong>TOTAL MALE: </strong> # <%= Student.where(:gender=>'male').count %> </p>
+          <p><strong>TOTAL FEMALE: </strong> # <%= Student.where(:gender=>'female').count %></p>
+        </small>
+
+      </div>
+      <div class="col-sm-6"><br>
+        <small class="text-right">
+
+          <p><strong>Fee monthly report: </strong> January,2015</p>
+          <p><strong>Advance Paid  : </strong> <span class="label label-info">12,000 tk</span></p>
+          <p><strong>Total Payable : </strong> <span class="label label-danger">20,000 tk</span></p>
+
+          <p><strong>Total Collection  : </strong> <span class="label label-primary">12,000 tk</span></p>
+
+        </small>
+      </div>
+    </div>
+  </div>
+  <!--end of bill to--->
+
+  <div  class="data-table-toolbar">
+    <div class="row">
+      <div class="col-md-4">
+        <form role="form">
+          <input id="search_with_id" type="text" class="form-control" placeholder="Search with id...">
+          <div style="display: none" class="searched_student_container"></div>
+        </form>
+      </div>
+      <div class="col-md-8">
+        <div class="btn-group ">
+          <a id="student_info_btn" data-toggle="tooltip" title="All Class Student Information" class="btn btn-primary"><i class="fa fa-user"></i> Student Info</a>
+        </div>
+        <div class="btn-group">
+          <%= select_tag 'select_level', options_from_collection_for_select(Level.all,:id, :name,{:class=>'rails_dropdown_options'}), {:prompt => 'Select Class', :class => 'btn btn-blue-3 dropdown-toggle' } %>
+          <!--<button  class="btn btn-blue-3 dropdown-toggle" data-toggle="dropdown">Select Class <span class="caret"></span></button>-->
+          <!--<ul class="dropdown-menu" role="menu">-->
+            <!--<li><a href="#fakelink">Class i</a></li>-->
+            <!--<li><a href="#fakelink">Class ii </a></li>-->
+            <!--<li><a href="#fakelink">Class iii</a></li>-->
+            <!--<li><a href="#fakelink">Class iv</a></li>-->
+            <!--<li><a href="#fakelink">Class v</a></li>-->
+            <!--<li><a href="#fakelink">Class vi</a></li>-->
+            <!--<li><a href="#fakelink">Class vii</a></li>-->
+            <!--<li><a href="#fakelink">Class viii</a></li>-->
+            <!--<li><a href="#fakelink">Class ix</a></li>-->
+            <!--<li><a href="#fakelink">Class x</a></li>-->
+          <!--</ul>-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--start student list--->
+  <div class="students_container">
+  <% @all_students.each do |st| %>
+      <div class="col-sm-6">
+        <div class="widget border-student">
+          <div class="widget-content">
+            <div class="student-list">
+              <%= image_tag(st.profilepic,:class => 'img-responsive') if st.profilepic %>
+            </div>
+            <div class="student-details">
+              <small class="text-left">
+                <h4><b><%= link_to  st.first_name+' '+st.last_name, student_profile_admins_path(st.user.id)%></b></h4>
+                <p><strong>User Id :<%= st.user.id %></strong></p>
+                <p><strong>User name :<%= st.user.user_name %></strong></p>
+                <p><b> Class: <%= st.shifts.first.semester.year.level.name unless st.shifts.first.nil? %> , Roll : <%= st.id %> </b></p>
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+  <% end %>
+  </div>
+
+  <!--<div class="col-sm-6 ">-->
+    <!--<div class="widget border-student">-->
+      <!--<div class="widget-content ">-->
+        <!--<div class="student-list">-->
+          <!--<img class="img-responsive" src="images/user2.jpg">-->
+        <!--</div>-->
+        <!--<div class="student-details">-->
+          <!--<small class="text-left">-->
+            <!--<h4><a href="#"><b> Hasibul Isalm Santo</b> </a></h4>-->
+            <!--<p><strong>User Id :  101-33-184</strong></p>-->
+            <!--<p><strong>User name :  Safa-184</strong></p>-->
+            <!--<p><b> Class: 10 , Rool : 30 </b></p>-->
+          <!--</small>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col-sm-6 ">-->
+    <!--<div class="widget border-student">-->
+      <!--<div class="widget-content ">-->
+        <!--<div class="student-list">-->
+          <!--<img class="img-responsive" src="images/user-256.jpg">-->
+        <!--</div>-->
+        <!--<div class="student-details">-->
+          <!--<small class="text-left">-->
+            <!--<h4><a href="#"><b> Hasibul Isalm Santo</b> </a></h4>-->
+            <!--<p><strong>User Id :  101-33-184</strong></p>-->
+            <!--<p><strong>User name :  Safa-184</strong></p>-->
+            <!--<p><b> Class: 10 , Rool : 30 </b></p>-->
+          <!--</small>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col-sm-6 ">-->
+    <!--<div class="widget border-student">-->
+      <!--<div class="widget-content ">-->
+        <!--<div class="student-list">-->
+          <!--<img class="img-responsive" src="images/user4.jpg">-->
+        <!--</div>-->
+        <!--<div class="student-details">-->
+          <!--<small class="text-left">-->
+            <!--<h4><a href="#"><b> Hasibul Isalm Santo</b> </a></h4>-->
+            <!--<p><strong>User Id :  101-33-184</strong></p>-->
+            <!--<p><strong>User name :  Safa-184</strong></p>-->
+            <!--<p><b> Class: 10 , Rool : 30 </b></p>-->
+          <!--</small>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col-sm-6">-->
+    <!--<div class="widget border-student">-->
+      <!--<div class="widget-content">-->
+        <!--<div class="student-list">-->
+          <!--<img class="img-responsive" src="images/user5.jpg">-->
+        <!--</div>-->
+        <!--<div class="student-details">-->
+          <!--<small class="text-left">-->
+            <!--<h4><a href="#"><b> Umme habiba Safa</b> </a></h4>-->
+            <!--<p><strong>User Id :  101-33-184</strong></p>-->
+            <!--<p><strong>User name :  Safa-184</strong></p>-->
+            <!--<p><b> Class: 10 , Rool : 30 </b></p>-->
+          <!--</small>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col-sm-6 ">-->
+    <!--<div class="widget border-student">-->
+      <!--<div class="widget-content ">-->
+        <!--<div class="student-list">-->
+          <!--<img class="img-responsive" src="images/user2.jpg">-->
+        <!--</div>-->
+        <!--<div class="student-details">-->
+          <!--<small class="text-left">-->
+            <!--<h4><a href="#"><b> Hasibul Isalm Santo</b> </a></h4>-->
+            <!--<p><strong>User Id :  101-33-184</strong></p>-->
+            <!--<p><strong>User name :  Safa-184</strong></p>-->
+            <!--<p><b> Class: 10 , Rool : 30 </b></p>-->
+          <!--</small>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col-sm-6 ">-->
+    <!--<div class="widget border-student">-->
+      <!--<div class="widget-content ">-->
+        <!--<div class="student-list">-->
+          <!--<img class="img-responsive" src="images/user-256.jpg">-->
+        <!--</div>-->
+        <!--<div class="student-details">-->
+          <!--<small class="text-left">-->
+            <!--<h4><a href="#"><b> Hasibul Isalm Santo</b> </a></h4>-->
+            <!--<p><strong>User Id :  101-33-184</strong></p>-->
+            <!--<p><strong>User name :  Safa-184</strong></p>-->
+            <!--<p><b> Class: 10 , Rool : 30 </b></p>-->
+          <!--</small>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col-sm-6 ">-->
+    <!--<div class="widget border-student">-->
+      <!--<div class="widget-content ">-->
+        <!--<div class="student-list">-->
+          <!--<img class="img-responsive" src="images/user4.jpg">-->
+        <!--</div>-->
+        <!--<div class="student-details">-->
+          <!--<small class="text-left">-->
+            <!--<h4><a href="#"><b> Hasibul Isalm Santo</b> </a></h4>-->
+            <!--<p><strong>User Id :  101-33-184</strong></p>-->
+            <!--<p><strong>User name :  Safa-184</strong></p>-->
+            <!--<p><b> Class: 10 , Rool : 30 </b></p>-->
+          <!--</small>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--end student list--->
+
+
+</div>
+</div>
+
+
+</div>
+</div>
+
+
+<div class="row">
+  <div class="col-lg-4 col-md-6 portlets">
+    <div id="stock-app" class="widget green-3">
+      <div class="widget-header transparent">
+        <h2><strong>Stock</strong> Markets</h2>
+        <div class="additional-btn">
+          <a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
+          <a class="hidden" id="dropdownMenu1" data-toggle="dropdown">
+            <i class="fa fa-cogs"></i>
+          </a>
+          <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+          <a href="#" class="widget-popout hidden tt" title="Pop Out/In"><i class="icon-publish"></i></a>
+          <a href="#" class="widget-maximize hidden"><i class="icon-resize-full-1"></i></a>
+          <a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
+          <a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
+        </div>
+      </div>
+      <div class="widget-content">
+        <div id="website-statistic3" class="statistic-chart">
+          <div class="row">
+            <div class="col-xs-6">
+              <h2>NASDAQ</h2>
+            </div>
+            <div class="col-xs-6">
+              <label id="nasdaq-status" class="stock-status"></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h2>DOW JONES</h2>
+            </div>
+            <div class="col-xs-6">
+              <label id="dow-status" class="stock-status"></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h2>S&P</h2>
+            </div>
+            <div class="col-xs-6">
+              <label id="sp-status" class="stock-status"></label>
+            </div>
+          </div>
+        </div>
+        <div id="home-chart-3"></div>
+      </div>
+      <div class="widget-footer">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-lg-4 col-md-6 portlets">
+    <div id="calc" class="widget darkblue-2">
+      <div class="widget-header">
+        <div class="additional-btn left-toolbar">
+          <div class="btn-group">
+            <a class="additional-icon" id="dropdownMenu2" data-toggle="dropdown">
+              Calculator <i class="fa fa-angle-down"></i>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+              <li><a href="#">Save</a></li>
+              <li><a href="#">Export</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Quit</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="additional-btn">
+          <a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
+
+          <a href="#" class="widget-popout hidden tt" title="Pop Out/In"><i class="icon-publish"></i></a>
+          <a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
+        </div>
+      </div>
+      <div id="calculator" class="widget-content">
+        <div class="calc-top col-xs-12">
+          <div class="row">
+            <div class="col-xs-3"><span class="calc-clean">C</span></div>
+            <div class="col-xs-9"><div class="calc-screen"></div></div>
+          </div>
+        </div>
+
+        <div class="calc-keys col-xs-12">
+          <div class="row">
+            <div class="col-xs-3"><span>7</span></div>
+            <div class="col-xs-3"><span>8</span></div>
+            <div class="col-xs-3"><span>9</span></div>
+            <div class="col-xs-3"><span class="calc-operator">+</span></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3"><span>4</span></div>
+            <div class="col-xs-3"><span>5</span></div>
+            <div class="col-xs-3"><span>6</span></div>
+            <div class="col-xs-3"><span class="calc-operator">-</span></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3"><span>1</span></div>
+            <div class="col-xs-3"><span>2</span></div>
+            <div class="col-xs-3"><span>3</span></div>
+            <div class="col-xs-3"><span class="calc-operator">÷</span></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3"><span>0</span></div>
+            <div class="col-xs-3"><span>.</span></div>
+            <div class="col-xs-3"><span class="calc-eval">=</span></div>
+            <div class="col-xs-3"><span class="calc-operator">x</span></div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer Start -->
+
+<!-- Footer End -->
+</div>
+
+<script src="/js/jquery-1.11.1.min.js"></script>
+<script>
+  var student_searching=new function(){
+      var student_id, student_id_field=$('#search_with_id');
+      student_id_field.keyup(function(){
+          student_id=$(this).val();
+          if(student_id!=''){
+              $.ajax({
+                  url: '<%= Rails.application.routes.url_helpers.student_search_admins_path %>',
+                  data: {student_id: student_id},
+                  type: 'get'
+              });
+          }
+      });
+
+  };
+  var show_students_according_to_class=new function(){
+      $('#select_level').change(function(){
+          var class_id=$(this).val();
+          if(class_id!=''){
+              $.ajax({
+                  url: '<%= Rails.application.routes.url_helpers.show_student_according_to_class_admins_path %>',
+                  data: {class_id: class_id},
+                  type: 'get'
+              });
+          }
+      });
+  };
+  var student_info_show=new function(){
+      $('#student_info_btn').click(function(){
+          $.ajax({
+              url: '<%= Rails.application.routes.url_helpers.student_count_admins_path %>',
+              data: {},
+              type: 'get'
+          });
+      });
+  };
+
+
+  var events=new function(){
+      $('.searched_student_container').click(function(e){
+          e.stopPropagation();
+      })
+      $(document).click(function(){
+          $('.searched_student_container').hide();
+      });
+  };
+
+
+</script>

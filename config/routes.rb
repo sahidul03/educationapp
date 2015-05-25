@@ -14,9 +14,16 @@ Rails.application.routes.draw do
       get "year_load"
       get "semester_load"
       get "shift_load"
-      get "student_profile"
+      get "student_profile/:id" , action: "student_profile", as: :student_profile
+      get "student_list"
+      get "student_search"
+      get "show_student_according_to_class"
+      get "student_count"
     end
+
   end
+
+
   resources :students do
     collection do
       get 'student_profile'

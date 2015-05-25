@@ -1,10 +1,10 @@
-<div  class="content profile-banner" >
+<div  class="content profile-banner"  style="background-image: url(<%= @student.coverpic.url %>)">
   <div class="col-sm-3 avatar-container">
-    <img src="images/user5.jpg" class=" profile-avatar" alt="User avatar">
+    <%= image_tag(@user.profilepic,:class => 'profile-avatar') if @user.profilepic %>
   </div>
   <div class="col-sm-12 profile-actions text-right">
-    <button type="button" class="btn btn-google-plus btn-sm"><i class="fa fa-bookmark"></i> Class xi </button>
-    <button type="button" class="btn btn-blue-3 btn-sm"><i class="fa fa-certificate"></i> 101-33-184</button>
+    <button type="button" class="btn btn-google-plus btn-sm"><i class="fa fa-bookmark"></i> Class <%= @student.shifts.first.semester.year.level.name unless @student.shifts.first.nil? %> </button>
+    <button type="button" class="btn btn-blue-3 btn-sm"><i class="fa fa-certificate"></i> <%= @student.user.user_name %></button>
     <button type="button" class="btn btn-blue-3 btn-sm"><i class="fa fa-ellipsis-v"></i></button>
   </div>
 </div>
@@ -14,7 +14,7 @@
 <div class="col-sm-3">
   <!-- Begin user profile -->
   <div class="user-profile-2">
-    <h4 class="text-center"> <b>Jannat jui Abida </b></h4>
+    <h5 class="text-center"> <b><%= @student.first_name+' '+@student.last_name %></b></h5>
 
 
     <ul class="list-group">

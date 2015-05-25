@@ -1,0 +1,19 @@
+   <% if @stdnt %>
+   <div class="col-sm-12">
+      <div class="widget border-student">
+        <div class="widget-content">
+          <div class="student-list">
+            <%= image_tag(@stdnt.profilepic,:class => 'img-responsive') %>
+          </div>
+          <div class="student-details">
+            <small class="text-left">
+              <h4><b><%= link_to  @stdnt.first_name+' '+@stdnt.last_name, student_profile_admins_path(@stdnt.user.id)%></b></h4>
+              <p><strong>User Id :<%= @stdnt.user.id %></strong></p>
+              <p><strong>User name :<%= @stdnt.user.user_name %></strong></p>
+              <p><b> Class: <%= @stdnt.shifts.first.semester.year.level.name unless @stdnt.shifts.first.nil? %> , Roll : <%= @stdnt.id %> </b></p>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
