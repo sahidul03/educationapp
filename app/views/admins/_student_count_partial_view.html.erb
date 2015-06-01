@@ -13,123 +13,57 @@
     </thead>
 
     <tbody>
-    <tr>
-      <td><a href="#">One ( i )</a></td>
-      <td><span class="label label-primary">200</span></td>
-      <td><span class="label label-success">120</span></td>
-      <td><span class="label label-warning">80</span></td>
-      <td><span class="label label-danger">2800</span></td>
-      <td><span class="label label-info">4000</span></td>
-      <td>
-        <div class="btn-group btn-group-xs">
-          <a data-toggle="tooltip" title="Off" class="btn btn-default"><i class="fa fa-power-off"></i></a>
-          <a data-toggle="tooltip" title="View" class="btn btn-default"><i class="fa fa-edit"></i></a>
-        </div>
-      </td>
-    </tr>
 
-    <tr>
-      <td><a href="#">Two ( ii )</a></td>
-      <td><span class="label label-primary">200</span></td>
-      <td><span class="label label-success">120</span></td>
-      <td><span class="label label-warning">80</span></td>
-      <td><span class="label label-danger">2800</span></td>
-      <td><span class="label label-info">4000</span></td>
-      <td>
-        <div class="btn-group btn-group-xs">
-          <a data-toggle="tooltip" title="Off" class="btn btn-default"><i class="fa fa-power-off"></i></a>
-          <a data-toggle="tooltip" title="View" class="btn btn-default"><i class="fa fa-edit"></i></a>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="#">Three ( iii )</a></td>
-      <td><span class="label label-primary">200</span></td>
-      <td><span class="label label-success">120</span></td>
-      <td><span class="label label-warning">80</span></td>
-      <td><span class="label label-danger">2800</span></td>
-      <td><span class="label label-info">4000</span></td>
-      <td>
-        <div class="btn-group btn-group-xs">
-          <a data-toggle="tooltip" title="Off" class="btn btn-default"><i class="fa fa-power-off"></i></a>
-          <a data-toggle="tooltip" title="View" class="btn btn-default"><i class="fa fa-edit"></i></a>
-        </div>
-      </td>
-    </tr>
+    <% @all_class=Level.all %>
+       <% if @all_class.any? %>
+            <%@all_class.each do |cls| %>
+         <%  @all_students_AC=[] %>
+            <% if cls %>
 
-    <tr>
-      <td><a href="#">Four ( iv )</a></td>
-      <td><span class="label label-primary">200</span></td>
-      <td><span class="label label-success">120</span></td>
-      <td><span class="label label-warning">80</span></td>
-      <td><span class="label label-danger">2800</span></td>
-      <td><span class="label label-info">4000</span></td>
-      <td>
-        <div class="btn-group btn-group-xs">
-          <a data-toggle="tooltip" title="Off" class="btn btn-default"><i class="fa fa-power-off"></i></a>
-          <a data-toggle="tooltip" title="View" class="btn btn-default"><i class="fa fa-edit"></i></a>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="#">Five ( v )</a></td>
-      <td><span class="label label-primary">200</span></td>
-      <td><span class="label label-success">120</span></td>
-      <td><span class="label label-warning">80</span></td>
-      <td><span class="label label-danger">2800</span></td>
-      <td><span class="label label-info">4000</span></td>
-      <td>
-        <div class="btn-group btn-group-xs">
-          <a data-toggle="tooltip" title="Off" class="btn btn-default"><i class="fa fa-power-off"></i></a>
-          <a data-toggle="tooltip" title="View" class="btn btn-default"><i class="fa fa-edit"></i></a>
-        </div>
-      </td>
-    </tr>
+            <tr>
+              <td><a href="#"><%= link_to cls.name, student_count_class_wise_admins_path(cls) %></a></td>
+              <td><span class="label label-primary"><%= cls.students.any? ? cls.students.count : 0 %></span></td>
+              <td><span class="label label-success">
+                <% if cls.students.where(:gender=>'male').any? %>
+                  <%= cls.students.where(:gender=>'male').count %>
+                <% else %>
+                <%= 0 %>
+                <% end %>
+              </span></td>
+              <td><span class="label label-warning">
+                <% if cls.students.where(:gender=>'female').any? %>
+                  <%= cls.students.where(:gender=>'female').count %>
+                <% else %>
+                  <%= 0 %>
+                <% end %>
+              </span></td>
+              <td><span class="label label-danger">2800</span></td>
+              <td><span class="label label-info">4000</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" title="Off" class="btn btn-default"><i class="fa fa-power-off"></i></a>
+                  <a data-toggle="tooltip" title="View" class="btn btn-default"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+            <% end %>
+            <% end %>
+       <%  end   %>
+    <!--<tr>-->
+      <!--<td><a href="#">One ( i )</a></td>-->
+      <!--<td><span class="label label-primary">200</span></td>-->
+      <!--<td><span class="label label-success">120</span></td>-->
+      <!--<td><span class="label label-warning">80</span></td>-->
+      <!--<td><span class="label label-danger">2800</span></td>-->
+      <!--<td><span class="label label-info">4000</span></td>-->
+      <!--<td>-->
+        <!--<div class="btn-group btn-group-xs">-->
+          <!--<a data-toggle="tooltip" title="Off" class="btn btn-default"><i class="fa fa-power-off"></i></a>-->
+          <!--<a data-toggle="tooltip" title="View" class="btn btn-default"><i class="fa fa-edit"></i></a>-->
+        <!--</div>-->
+      <!--</td>-->
+    <!--</tr>-->
 
-
-    <tr>
-      <td><a href="#">Six ( vi )</a></td>
-      <td><span class="label label-primary">200</span></td>
-      <td><span class="label label-success">120</span></td>
-      <td><span class="label label-warning">80</span></td>
-      <td><span class="label label-danger">2800</span></td>
-      <td><span class="label label-info">4000</span></td>
-      <td>
-        <div class="btn-group btn-group-xs">
-          <a data-toggle="tooltip" title="Off" class="btn btn-default"><i class="fa fa-power-off"></i></a>
-          <a data-toggle="tooltip" title="View" class="btn btn-default"><i class="fa fa-edit"></i></a>
-        </div>
-      </td>
-    </tr>
-
-    <tr>
-      <td><a href="#">Seven ( vii )</a></td>
-      <td><span class="label label-primary">200</span></td>
-      <td><span class="label label-success">120</span></td>
-      <td><span class="label label-warning">80</span></td>
-      <td><span class="label label-danger">2800</span></td>
-      <td><span class="label label-info">4000</span></td>
-      <td>
-        <div class="btn-group btn-group-xs">
-          <a data-toggle="tooltip" title="Off" class="btn btn-default"><i class="fa fa-power-off"></i></a>
-          <a data-toggle="tooltip" title="View" class="btn btn-default"><i class="fa fa-edit"></i></a>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="#">Eight ( viii )</a></td>
-      <td><span class="label label-primary">200</span></td>
-      <td><span class="label label-success">120</span></td>
-      <td><span class="label label-warning">80</span></td>
-      <td><span class="label label-danger">2800</span></td>
-      <td><span class="label label-info">4000</span></td>
-      <td>
-        <div class="btn-group btn-group-xs">
-          <a data-toggle="tooltip" title="Off" class="btn btn-default"><i class="fa fa-power-off"></i></a>
-          <a data-toggle="tooltip" title="View" class="btn btn-default"><i class="fa fa-edit"></i></a>
-        </div>
-      </td>
-    </tr>
 
     </tbody>
   </table>

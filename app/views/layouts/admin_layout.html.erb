@@ -407,7 +407,11 @@
         <h2>Chat Groups</h2>
         <div class="widget-content">
           <ul class="list-unstyled">
-            <li><a href="javascript:;"><i class="fa fa-circle-o text-red-1"></i> Student</a></li>
+            <li>
+              <%= link_to student_list_admins_path do %>
+                  <i class="fa fa-circle-o text-red-1"></i> Student
+              <% end %>
+            </li>
             <li><a href="javascript:;"><i class="fa fa-circle-o text-blue-1"></i> Teacher</a></li>
             <li><a href="javascript:;"><i class="fa fa-circle-o text-green-1"></i> Employee</a></li>
           </ul>

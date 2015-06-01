@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
 
-  before_action :common_method, except: [:year_load, :semester_load, :shift_load,:create_student_and_guardian,:student_profile,:student_search,:show_student_according_to_class,:student_list,:student_count]
+  before_action :common_method, except: [:year_load, :semester_load, :shift_load,:create_student_and_guardian,:student_profile,:student_search,:show_student_according_to_class,:student_list,:student_count,:student_count_class_wise,:show_students_according_to_gender,:search_students_according_to_gender]
 
   def index
 
@@ -31,7 +31,7 @@ class AdminsController < ApplicationController
       if student.save
         guardian_table=guardian.guardians.new(:name=>params[:student][:local_guardian],:contact_number=>params[:guardian_contact_number])
         if guardian_table.save
-          student_table=student.students.new(:guardian_id=>guardian_table.id,:campus_id=>params[:select_campus],:first_name=>params[:student_first_name],:last_name=>params[:student_last_name],:father_name=>params[:student][:father_name],:mother_name=>params[:student][:mother_name],:local_guardian=>params[:student][:local_guardian],:relationship_with_guardian=>params[:student][:relationship_with_guardian],:contact_number=>params[:student_contact_number],:gender=>params[:student][:gender],:profilepic=>params[:student][:profilepic],:coverpic=>params[:student][:coverpic])
+          student_table=student.students.new(:guardian_id=>guardian_table.id,:campus_id=>params[:select_campus],:first_name=>params[:student_first_name],:last_name=>params[:student_last_name],:father_name=>params[:student][:father_name],:mother_name=>params[:student][:mother_name],:local_guardian=>params[:student][:local_guardian],:relationship_with_guardian=>params[:student][:relationship_with_guardian],:contact_number=>params[:student_contact_number],:gender=>params[:student][:gender],:profilepic=>params[:student][:profilepic],:coverpic=>params[:student][:coverpic],:level_id=>params[:select_level])
           if student_table.save
             # raise student_table.inspect
             shft=Shift.find(params[:select_shift])
@@ -59,9 +59,14 @@ class AdminsController < ApplicationController
   end
 
   def student_profile
-    @user=User.find(params[:id])
-    @student=@user.students.first
-    render layout: 'admin_layout'
+    usr=User.where(:id=>params[:id])
+    if usr.first
+      @user=usr.first
+      @student=@user.students.first
+      render layout: 'admin_layout'
+    else
+      redirect_to admins_path
+    end
   end
 
   def student_list
@@ -92,8 +97,12 @@ class AdminsController < ApplicationController
   end
 
   def student_search
-      usr=User.find(params[:student_id])
-      @stdnt=usr.students.first
+      usr=User.where(:id=>params[:student_id])
+      if usr.first
+        @stdnt=usr.first.students.first
+      else
+        @stdnt= false
+      end
   end
 
   def show_student_according_to_class
@@ -124,7 +133,36 @@ class AdminsController < ApplicationController
 
 
   def student_count
+  end
 
+  def student_count_class_wise
+    lvls=Level.where(:id=>params[:id])
+    if lvls.first
+      @level=lvls.first
+      render layout: 'admin_layout'
+    else
+      redirect_to admins_path
+    end
+  end
+
+  def show_students_according_to_gender
+    lvl=Level.find(params[:level_id])
+    @stdnt_AT_gender=lvl.students.where(:gender=>params[:gender])
+  end
+
+
+  def search_students_according_to_gender
+    if params[:student_id]==''
+      lvl=Level.find(params[:level_id])
+      @stdnt=lvl.students if lvl
+    else
+      usr=User.where(:id=>params[:student_id])
+      if usr.first
+        @stdnt=usr.first.students.first
+      else
+        @stdnt= false
+      end
+    end
   end
 
   protected

@@ -19,6 +19,9 @@ Rails.application.routes.draw do
       get "student_search"
       get "show_student_according_to_class"
       get "student_count"
+      get "student_count_class_wise/:id", action: 'student_count_class_wise', as: :student_count_class_wise
+      get "show_students_according_to_gender"
+      get "search_students_according_to_gender"
     end
 
   end

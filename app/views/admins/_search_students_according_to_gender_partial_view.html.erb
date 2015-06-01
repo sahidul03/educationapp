@@ -1,0 +1,51 @@
+<% if @stdnt.respond_to?('each') %>
+        <% @stdnt.each do |std| %>
+            <tr>
+              <td><%= std.user.user_name %></td>
+              <td><a href="mailto:#"><%= link_to std.first_name+' '+ std.last_name, student_profile_admins_path(std.user.id) %></a></td>
+              <td>10</td>
+              <td><%= std.level.name %> </td>
+              <td>Science</td>
+              <td>2015</td>
+              <td>Fall-2015</td>
+              <td><span class="label label-primary"><%= std.gender %></span></td>
+              <td><%= std.guardian.contact_number %></td>
+              <td><span class="label label-success">paid</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" title="Off" class="btn btn-default"><i class="fa fa-power-off"></i></a>
+                  <a data-toggle="tooltip" title="View" class="btn btn-default"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+        <% end %>
+<% else %>
+    <% if @stdnt %>
+        <tr>
+          <td><%= @stdnt.user.user_name %></td>
+          <td><a href="mailto:#"><%= link_to @stdnt.first_name+' '+ @stdnt.last_name, student_profile_admins_path(@stdnt.user.id) %></a></td>
+          <td>10</td>
+          <td><%= @stdnt.level.name %> </td>
+          <td>Science</td>
+          <td>2015</td>
+          <td>Fall-2015</td>
+          <td><span class="label label-primary"><%= @stdnt.gender %></span></td>
+          <td><%= @stdnt.guardian.contact_number %></td>
+          <td><span class="label label-success">paid</span></td>
+          <td>
+            <div class="btn-group btn-group-xs">
+              <a data-toggle="tooltip" title="Off" class="btn btn-default"><i class="fa fa-power-off"></i></a>
+              <a data-toggle="tooltip" title="View" class="btn btn-default"><i class="fa fa-edit"></i></a>
+            </div>
+          </td>
+        </tr>
+    <% else %>
+        <tr>
+          <td colspan="100%" style="width:100%">
+            <h4 style="text-align: center">This id is not available</h4>
+          </td>
+        </tr>
+    <% end %>
+<% end %>
+
+
