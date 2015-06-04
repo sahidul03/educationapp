@@ -45,23 +45,28 @@ class AdminsController < ApplicationController
 
   def year_load
     l=Level.find(params[:level_id])
-    @years=l.years
+    if l
+      @years=l.years
+    end
   end
 
   def semester_load
     y=Year.find(params[:year_id])
-    @semesters=y.semesters
+    if y
+      @semesters=y.semesters
+    end
   end
 
   def shift_load
-    sh=Semester.find(params[:semester_id])
-    @shifts=sh.shifts
+    sh=Semester.find(params[:semester_id]) rescue nil
+    if sh
+      @shifts=sh.shifts
+    end
   end
 
   def student_profile
-    usr=User.where(:id=>params[:id])
-    if usr.first
-      @user=usr.first
+    @user=User.find(params[:id]) rescue nil
+    if @user
       @student=@user.students.first
       render layout: 'admin_layout'
     else
@@ -71,35 +76,17 @@ class AdminsController < ApplicationController
 
   def student_list
     @all_students=[]
-    @default_class=Level.first
+    @default_class=Level.first rescue nil
     if @default_class
-        years=@default_class.years
-        if years.any?
-          years.each do |year|
-            semesters=year.semesters
-            if semesters.any?
-              semesters.each do |semester|
-                shifts=semester.shifts
-                if shifts.any?
-                  shifts.each do |shift|
-                    students=shift.students
-                    if students.any?
-                      @all_students=@all_students+students
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+      @all_students=@default_class.students
     end
     render layout: 'admin_layout'
   end
 
   def student_search
-      usr=User.where(:id=>params[:student_id])
-      if usr.first
-        @stdnt=usr.first.students.first
+    usr=User.find(params[:student_id]) rescue nil
+      if usr
+        @stdnt=usr.students.first
       else
         @stdnt= false
       end
@@ -107,27 +94,9 @@ class AdminsController < ApplicationController
 
   def show_student_according_to_class
     @all_students_AC=[]
-    @default_class_AC=Level.find(params[:class_id])
+    @default_class_AC=Level.find(params[:class_id]) rescue nil
     if @default_class_AC
-      years=@default_class_AC.years
-      if years.any?
-        years.each do |year|
-          semesters=year.semesters
-          if semesters.any?
-            semesters.each do |semester|
-              shifts=semester.shifts
-              if shifts.any?
-                shifts.each do |shift|
-                  students=shift.students
-                  if students.any?
-                    @all_students_AC=@all_students_AC+students
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+      @all_students_AC=@default_class_AC.students
     end
   end
 
@@ -136,9 +105,8 @@ class AdminsController < ApplicationController
   end
 
   def student_count_class_wise
-    lvls=Level.where(:id=>params[:id])
-    if lvls.first
-      @level=lvls.first
+    @level=Level.find(params[:id]) rescue nil
+    if @level
       render layout: 'admin_layout'
     else
       redirect_to admins_path
@@ -146,8 +114,12 @@ class AdminsController < ApplicationController
   end
 
   def show_students_according_to_gender
-    lvl=Level.find(params[:level_id])
-    @stdnt_AT_gender=lvl.students.where(:gender=>params[:gender])
+    lvl=Level.find(params[:level_id]) rescue nil
+    if lvl
+      @stdnt_AT_gender=lvl.students.where(:gender=>params[:gender])
+    else
+      redirect_to admins_path
+    end
   end
 
 
@@ -156,9 +128,9 @@ class AdminsController < ApplicationController
       lvl=Level.find(params[:level_id])
       @stdnt=lvl.students if lvl
     else
-      usr=User.where(:id=>params[:student_id])
-      if usr.first
-        @stdnt=usr.first.students.first
+      usr=User.find(params[:student_id]) rescue nil
+      if usr
+        @stdnt=usr.students.first
       else
         @stdnt= false
       end

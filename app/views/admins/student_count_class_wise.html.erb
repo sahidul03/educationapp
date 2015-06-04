@@ -173,7 +173,7 @@
         <div data-toggle="tooltip" data-level_id="<%= @level.id %>" data-gender="female" title="Female  Student Information" class="btn btn-orange-2 student_AT_gender"><i class="fa fa-female"></i> Female</div>
       </div>
       <div class="btn-group">
-        <%= select_tag 'select_level', options_from_collection_for_select(Level.all,:id, :name ,{:class=>'rails_dropdown_options'}), {:prompt => 'Select Class', :class => 'btn btn-primary dropdown-toggle' } %>
+        <%= select_tag 'select_level', options_from_collection_for_select(Level.all,:id, :name ,{:class=>'rails_dropdown_options'}), {:class => 'btn btn-primary dropdown-toggle' } %>
       </div>
     </div>
   </div>
@@ -251,7 +251,7 @@
     <li><a href="#">3</a></li>
     <li><a href="#">4</a></li>
     <li><a href="#">5</a></li>
-    <li><a href="#">&raquo;</a></li>
+    <li><a href="#">6</a></li>
   </ul>
 </div>
 
@@ -418,14 +418,10 @@
     };
 
 
-    var events=new function(){
-        $('.searched_student_container').click(function(e){
-            e.stopPropagation();
-        })
-        $(document).click(function(){
-            $('.searched_student_container').hide();
+    var class_dropdown_options_url=new function(){
+        $('#select_level').click(function(){
+            var lvl_id=$(this).val();
+            window.location='/admins/student_count_class_wise/'+lvl_id;
         });
     };
-
-
 </script>
