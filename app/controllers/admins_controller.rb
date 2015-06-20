@@ -1,6 +1,9 @@
 class AdminsController < ApplicationController
 
-  before_action :common_method, except: [:year_load, :semester_load, :shift_load,:create_student_and_guardian,:student_profile,:student_search,:show_student_according_to_class,:student_list,:student_count,:student_count_class_wise,:show_students_according_to_gender,:search_students_according_to_gender]
+  before_action :common_method, except: [:year_load, :semester_load, :shift_load,:create_student_and_guardian,
+                                         :student_profile,:student_search,:show_student_according_to_class,:student_list,
+                                         :student_count,:student_count_class_wise,:show_students_according_to_gender,
+                                         :search_students_according_to_gender,:fee_create]
 
   def index
 
@@ -137,7 +140,24 @@ class AdminsController < ApplicationController
     end
   end
 
+  # def fee_setting
+  # end
+  #
+  # def fee_create
+  #   fee=Fee.new(fee_params)
+  #   if fee.save
+  #     flash[:notice] = "Post successfully created"
+  #     redirect_to fee_setting_admins_path
+  #   else
+  #     redirect_to fee_setting_admins_path
+  #   end
+  #
+  # end
+
   protected
+  # def fee_params
+  #   params.require(:fee).permit(:monthly_fee, :session_fee, :admission_fee, :ict_fee, :exam_fee, :others, :comment).merge(:level_id=> params[:select_level],:month_id=>params[:select_month])
+  # end
   def common_method
     render layout: 'admin_layout'
   end

@@ -22,6 +22,8 @@ Rails.application.routes.draw do
       get "student_count_class_wise/:id", action: 'student_count_class_wise', as: :student_count_class_wise
       get "show_students_according_to_gender"
       get "search_students_according_to_gender"
+      get "fee_setting"
+      post "fee_create"
     end
 
   end
@@ -35,6 +37,12 @@ Rails.application.routes.draw do
 
   resources :teachers
   resources :guardians
+  resources :fees do
+    collection do
+      get 'load_class_wise_fees'
+    end
+  end
+
 
 
   # devise_scope :user do

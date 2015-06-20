@@ -1,0 +1,684 @@
+<% if Fee.new.errors.any?  %>
+    <%= raise Fee.new.errors.inspect %>
+<% end %>
+<div class="content ">
+<!-- Start info box -->
+<div  class="row   top-summary">
+  <div class="col-lg-3 col-md-6">
+    <div class="widget lightblue-1">
+      <div class="widget-content padding">
+        <div class="widget-icon">
+
+        </div>
+        <div class="text-box">
+          <p class="maindata">TOTAL <b>Collected</b></p>
+          <h2><span class="animate-number" data-value="60000000" data-duration="3000">0</span>Tk</h2>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="widget-footer">
+        <div class="row">
+          <div class="col-sm-12">
+            <i class="fa fa-caret-up rel-change"></i><b> Present of Collaction</b> 89%
+          </div>
+          <div class="col-sm-12">
+            <i class="fa fa-caret-down rel-change"></i><b> Present of unpaid</b> 11%
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6">
+    <div class="widget green-1">
+      <div class="widget-content padding">
+        <div class="widget-icon">
+
+        </div>
+        <div class="text-box">
+          <p class="maindata">TOTAL <b>Collected in this Yearly</b></p>
+          <h2><span class="animate-number" data-value="1200" data-duration="3000">0</span>Tk</h2>
+
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="widget-footer">
+        <div class="row">
+          <div class="col-sm-12">
+            <i class="fa fa-caret-up rel-change"></i><b> Present of Collaction</b> 89%
+          </div>
+          <div class="col-sm-12">
+            <i class="fa fa-caret-down rel-change"></i><b> Present of unpaid</b> 11%
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6">
+    <div class="widget orange-4">
+      <div class="widget-content padding">
+        <div class="widget-icon">
+
+        </div>
+        <div class="text-box">
+          <p class="maindata">TOTAL <b> Collected in this Monthly</b></p>
+          <h2><span class="animate-number" data-value="600" data-duration="3000">0</span>Tk</h2>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="widget-footer">
+        <div class="row">
+          <div class="col-sm-12">
+            <i class="fa fa-caret-up rel-change"></i><b> Present of Collaction</b> 89%
+          </div>
+          <div class="col-sm-12">
+            <i class="fa fa-caret-down rel-change"></i><b> Present of unpaid</b> 11%
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6">
+    <div class="widget darkblue-2">
+      <div class="widget-content padding">
+        <div class="widget-icon">
+
+        </div>
+        <div class="text-box">
+          <p class="maindata">TOTAL <b>Remaining</b></p>
+          <h2><span class="animate-number" data-value="8000" data-duration="3000">0</span>Tk</h2>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="widget-footer">
+        <div class="row">
+          <div class="col-sm-12">
+            <i class="fa fa-caret-up rel-change"></i><b> Present of Collaction</b> 89%
+          </div>
+          <div class="col-sm-12">
+            <i class="fa fa-caret-down rel-change"></i><b> Present of unpaid</b> 11%
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- End of info box -->
+<div class="row">
+<div class="col-lg-8 portlets">
+<div class="widget">
+<div class="widget-header">
+  <h2><i class="fa fa-bar-chart"></i> <strong>Fee</strong> setting </h2>
+  <div class="additional-btn">
+    <a href="#" class="hidden reload"><i class="fa fa-repeat"></i></a>
+    <a class="hidden" id="dropdownMenu1" data-toggle="dropdown">
+      <i class="fa fa-cogs"></i>
+    </a>
+    <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1">
+      <li><a href="#">Action</a></li>
+      <li><a href="#">Another action</a></li>
+      <li><a href="#">Something else here</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Separated link</a></li>
+    </ul>
+    <a href="#" class="widget-popout hidden tt" title="Pop Out/In"><i class="fa fa-chevron-up "></i></a>
+    <a href="#" class="widget-maximize hidden"><i class="fa fa-arrows"></i></a>
+    <a href="#" class="widget-toggle"><i class="fa fa-chevron-down"></i></a>
+
+  </div>
+</div>
+
+
+
+<div class="widget-content">
+<div  class="data-table-toolbar">
+  <div class="row">
+    <div class="col-md-4">
+      <form role="form">
+        <input type="text" class="form-control" placeholder=" Student id ">
+      </form>
+    </div>
+    <div class="col-md-8">
+      <div class="toolbar-btn-action">
+        <a class="btn btn-success"><i class="fa fa-check"></i> Collect Fee</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="table-responsive">
+  <div class="col-lg-8 portlets">
+    <h4 class="text-left padding-left">Set fee setting</h4>
+  </div>
+  <%= form_for Fee.new , :url => fee_create_admins_path, :method => :post do |f|%>
+  <table class="table table-condensed ">
+    <thead>
+    <tr>
+      <th>SL. number</th>
+      <th>Category</th>
+      <th>Option</th>
+      <th>Delet / Edit</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <tr>
+      <td>01</td>
+      <td>Seletc Class</td>
+      <td>
+        <%= select_tag 'select_level', options_from_collection_for_select(Level.all,:id, :name), {:prompt => 'Select Class', :class => 'btn btn-primary' } %>
+      </td>
+      <td>
+        <div class="btn-group btn-group-xs">
+          <a data-toggle="tooltip" title="Delete" class="btn btn-red-1 disabled"><i class="fa fa-close"></i></a>
+          <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4 disabled"><i class="fa fa-edit"></i></a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td>Seletc Month</td>
+      <td>
+        <%= select_tag 'select_month', options_from_collection_for_select(Month.all,:id, :name), {:prompt => 'Select Month', :class => 'btn btn-primary' } %>
+      </td>
+      <td>
+        <div class="btn-group btn-group-xs">
+          <a data-toggle="tooltip" title="Delete" class="btn btn-red-1 disabled"><i class="fa fa-close"></i></a>
+          <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4 disabled"><i class="fa fa-edit"></i></a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>03</td>
+      <td>Student Fee</td>
+      <td>
+        <%= f.text_field :monthly_fee, :class => 'form-control', :placeholder=>" tk "%>
+      </td>
+      <td>
+        <div class="btn-group btn-group-xs">
+          <a data-toggle="tooltip" title="Delete" class="btn btn-red-1" id=""><i class="fa fa-close"></i></a>
+          <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>04</td>
+      <td>Session Fee</td>
+      <td>
+        <%= f.text_field :session_fee, :class => 'form-control' , :placeholder=>" tk "%>
+      </td>
+      <td>
+        <div class="btn-group btn-group-xs">
+          <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
+          <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>05</td>
+      <td>Admission Fee</td>
+      <td>
+        <%= f.text_field :admission_fee, :class => 'form-control' , :placeholder=>" tk "%>
+      </td>
+      <td>
+        <div class="btn-group btn-group-xs">
+          <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
+          <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>06</td>
+      <td>ICT  Fee</td>
+      <td>
+        <%= f.text_field :ict_fee, :class => 'form-control' , :placeholder=>" tk "%>
+      </td>
+      <td>
+        <div class="btn-group btn-group-xs">
+          <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
+          <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>07</td>
+      <td>Exam  Fee</td>
+      <td>
+        <%= f.text_field :exam_fee, :class => 'form-control' , :placeholder=>" tk "%>
+      </td>
+      <td>
+        <div class="btn-group btn-group-xs">
+          <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
+          <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>08</td>
+      <td>Others  Fee</td>
+      <td>
+        <%= f.text_field :others, :class => 'form-control' , :placeholder=>" tk "%>
+      </td>
+      <td>
+        <div class="btn-group btn-group-xs">
+          <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
+          <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>09</td>
+      <td>Comments</td>
+      <td>
+        <%= f.text_field :comment, :class => 'form-control' , :placeholder=>" tk "%>
+      </td>
+      <td>
+        <div class="btn-group btn-group-xs">
+          <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
+          <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
+        </div>
+      </td>
+    </tr>
+
+    </tbody>
+
+  </table>
+
+
+  <div  class="data-table-toolbar">
+    <div class="row">
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-8">
+        <div class="toolbar-btn-action">
+          <%= f.submit "Submit", :class =>"btn btn-blue-3" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <h4 class="text-center">Successfully Set fee </h4><br><br>
+</div>
+
+
+
+<div  class="widget invoice">
+
+
+  <div  class="widget-content padding">
+    <div  class="data-table-toolbar">
+      <div class="row">
+        <div class="col-md-9">
+          <h4 class="text-left" >Find fee of a class </h4>
+        </div>
+        <div  class="col-md-3">
+
+          <select style="margin-top:8px;" class="btn btn-primary">
+            <option>Select Class</option>
+            <option>Five</option>
+            <option>Six</option>
+            <option>Seven</option>
+            <option>Five</option>
+            <option>Six</option>
+            <option>Seven</option>
+          </select>
+
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid #ddd; border-bottom:none;" class="bill-to-receipt">
+      <div class="row">
+        <div class="col-sm-6">
+          <small class="text-left">
+            <h4><strong><a href="#">Class : five</a></strong></h4>
+            <p><strong>Year / session: </strong> <span class="label label-primary">2015</span></p>
+
+
+          </small>
+
+        </div>
+        <div class="col-sm-6"><br>
+          <small class="text-right">
+            <p><strong>Update : </strong> January 15, 2014</p>
+            <p><strong>Month : </strong> <span class="label label-warning">January</span></p>
+
+          </small>
+
+        </div>
+      </div>
+    </div>
+    <!--end of bill to--->
+    <div style="border:1px solid #ddd" class="table-responsive">
+      <table class="table table-condensed ">
+        <thead>
+        <tr>
+          <th>SL. number</th>
+          <th>Category</th>
+          <th>Amount ( tk )</th>
+          <th>Delete / Edit</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr>
+          <th>01</th>
+          <td>Student Fee</td>
+          <td>100</td>
+          <td>
+            <div class="btn-group btn-group-xs">
+              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
+              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>01</th>
+          <td>Student Fee</td>
+          <td>1000</td>
+          <td>
+            <div class="btn-group btn-group-xs">
+              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
+              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>01</th>
+          <td>Student Fee</td>
+          <td>130</td>
+          <td>
+            <div class="btn-group btn-group-xs">
+              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
+              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>01</th>
+          <td>Student Fee</td>
+          <td>160</td>
+          <td>
+            <div class="btn-group btn-group-xs">
+              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
+              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>01</th>
+          <td>2nd monthly exam Fee</td>
+          <td>100</td>
+          <td>
+            <div class="btn-group btn-group-xs">
+              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
+              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
+            </div>
+          </td>
+        </tr>
+
+        </tbody>
+
+      </table>
+      <!--
+      <div  class="data-table-toolbar">
+           <div class="row">
+               <div class="col-md-4">
+
+               </div>
+               <div class="col-md-8">
+                   <div class="toolbar-btn-action">
+                       <a class="btn btn-blue-3"><i class="fa fa-check"></i> submit</a>
+
+                   </div>
+               </div>
+           </div>
+       </div>
+       -->
+
+    </div>
+  </div>
+</div>
+<!--end of widget invoice-->
+
+
+</div>
+</div>
+</div>
+<div class="col-lg-4 portlets">
+  <div class="widget lightblue-2">
+    <div class="widget-header transparent">
+      <h2><i class="fa fa-barcode"></i><strong> Fee</strong> Status</h2>
+      <div class="additional-btn">
+        <a href="#" class="hidden reload"><i class="fa fa-repeat"></i></a>
+        <a class="hidden" id="dropdownMenu1" data-toggle="dropdown">
+          <i class="fa fa-cogs"></i>
+        </a>
+        <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+        <a href="#" class="widget-popout hidden tt" title="Pop Out/In"><i class="fa fa-chevron-up "></i></a>
+        <a href="#" class="widget-maximize hidden"><i class="fa fa-arrows"></i></a>
+        <a href="#" class="widget-toggle"><i class="fa fa-chevron-down"></i></a>
+        <a href="#" class="widget-close"><i class="fa fa-close"></i></a>
+      </div>
+    </div>
+    <div class="widget-content">
+      <div id="website-statistic2" class="statistic-chart">
+
+        <div class="col-sm-12 stacked">
+
+          <div class="sales-report-data">
+            <span class="pull-left">Class i</span><span class="pull-right">65 / 174</span>
+            <div class="progress progress-xs">
+              <div style="width: 38%;" class="progress-bar bg-blue-1"></div>
+            </div>
+            <div class="clearfix"></div>
+            <span class="pull-left">Class ii</span><span class="pull-right">22 / 25</span>
+            <div class="progress progress-xs">
+              <div style="width: 88%;" class="progress-bar bg-green-1"></div>
+            </div>
+            <div class="clearfix"></div>
+            <span class="pull-left">Class iii</span><span class="pull-right">418 / 624</span>
+            <div class="progress progress-xs">
+              <div style="width: 58%;" class="progress-bar bg-pink-1"></div>
+            </div>
+            <div class="clearfix"></div>
+            <span class="pull-left">Class iv</span><span class="pull-right">418 / 624</span>
+            <div class="progress progress-xs">
+              <div style="width: 58%;" class="progress-bar bg-blue-3"></div>
+            </div>
+            <div class="clearfix"></div>
+            <span class="pull-left">Class v</span><span class="pull-right">418 / 624</span>
+            <div class="progress progress-xs">
+              <div style="width: 58%;" class="progress-bar bg-darkblue-3"></div>
+            </div>
+            <div class="clearfix"></div>
+            <span class="pull-left">Class vi</span><span class="pull-right">418 / 624</span>
+            <div class="progress progress-xs">
+              <div style="width: 58%;" class="progress-bar bg-green-3"></div>
+            </div>
+            <div class="clearfix"></div>
+            <span class="pull-left">Class vii</span><span class="pull-right">418 / 624</span>
+            <div class="progress progress-xs">
+              <div style="width: 58%;" class="progress-bar bg-orange-1"></div>
+            </div>
+            <div class="clearfix"></div>
+            <span class="pull-left">Class viii</span><span class="pull-right">418 / 624</span>
+            <div class="progress progress-xs">
+              <div style="width: 58%;" class="progress-bar bg-darkblue-2"></div>
+            </div>
+            <div class="clearfix"></div>
+            <span class="pull-left">Class ix</span><span class="pull-right">418 / 624</span>
+            <div class="progress progress-xs">
+              <div style="width: 58%;" class="progress-bar"></div>
+            </div>
+            <div class="clearfix"></div>
+            <span class="pull-left">Class x</span><span class="pull-right">418 / 624</span>
+            <div class="progress progress-xs">
+              <div style="width: 58%;" class="progress-bar"></div>
+            </div>
+            <div class="clearfix"></div>
+            <span class="pull-left">Class xi</span><span class="pull-right">418 / 624</span>
+            <div class="progress progress-xs">
+              <div style="width: 58%;" class="progress-bar"></div>
+            </div>
+            <div class="clearfix"></div>
+            <span class="pull-left">Class xii</span><span class="pull-right">418 / 624</span>
+            <div class="progress progress-xs">
+              <div style="width: 58%;" class="progress-bar"></div>
+            </div>
+            <div class="clearfix"></div>
+            <span class="pull-left">Overall Product Stock</span><span class="pull-right">19%</span>
+            <div class="progress progress-xs">
+              <div style="width: 19%;" class="progress-bar bg-pink-1"></div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <div id="home-chart-2"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+<div class="row">
+  <div class="col-lg-4 col-md-6 portlets">
+    <div id="stock-app" class="widget green-3">
+      <div class="widget-header transparent">
+        <h2><strong>Stock</strong> Markets</h2>
+        <div class="additional-btn">
+          <a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
+          <a class="hidden" id="dropdownMenu1" data-toggle="dropdown">
+            <i class="fa fa-cogs"></i>
+          </a>
+          <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+          <a href="#" class="widget-popout hidden tt" title="Pop Out/In"><i class="icon-publish"></i></a>
+          <a href="#" class="widget-maximize hidden"><i class="icon-resize-full-1"></i></a>
+          <a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
+          <a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
+        </div>
+      </div>
+      <div class="widget-content">
+        <div id="website-statistic3" class="statistic-chart">
+          <div class="row">
+            <div class="col-xs-6">
+              <h2>NASDAQ</h2>
+            </div>
+            <div class="col-xs-6">
+              <label id="nasdaq-status" class="stock-status"></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h2>DOW JONES</h2>
+            </div>
+            <div class="col-xs-6">
+              <label id="dow-status" class="stock-status"></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h2>S&P</h2>
+            </div>
+            <div class="col-xs-6">
+              <label id="sp-status" class="stock-status"></label>
+            </div>
+          </div>
+        </div>
+        <div id="home-chart-3"></div>
+      </div>
+      <div class="widget-footer">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-lg-4 col-md-6 portlets">
+    <div id="calc" class="widget darkblue-2">
+      <div class="widget-header">
+        <div class="additional-btn left-toolbar">
+          <div class="btn-group">
+            <a class="additional-icon" id="dropdownMenu2" data-toggle="dropdown">
+              Calculator <i class="fa fa-angle-down"></i>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+              <li><a href="#">Save</a></li>
+              <li><a href="#">Export</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Quit</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="additional-btn">
+          <a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
+
+          <a href="#" class="widget-popout hidden tt" title="Pop Out/In"><i class="icon-publish"></i></a>
+          <a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
+        </div>
+      </div>
+      <div id="calculator" class="widget-content">
+        <div class="calc-top col-xs-12">
+          <div class="row">
+            <div class="col-xs-3"><span class="calc-clean">C</span></div>
+            <div class="col-xs-9"><div class="calc-screen"></div></div>
+          </div>
+        </div>
+
+        <div class="calc-keys col-xs-12">
+          <div class="row">
+            <div class="col-xs-3"><span>7</span></div>
+            <div class="col-xs-3"><span>8</span></div>
+            <div class="col-xs-3"><span>9</span></div>
+            <div class="col-xs-3"><span class="calc-operator">+</span></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3"><span>4</span></div>
+            <div class="col-xs-3"><span>5</span></div>
+            <div class="col-xs-3"><span>6</span></div>
+            <div class="col-xs-3"><span class="calc-operator">-</span></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3"><span>1</span></div>
+            <div class="col-xs-3"><span>2</span></div>
+            <div class="col-xs-3"><span>3</span></div>
+            <div class="col-xs-3"><span class="calc-operator">÷</span></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3"><span>0</span></div>
+            <div class="col-xs-3"><span>.</span></div>
+            <div class="col-xs-3"><span class="calc-eval">=</span></div>
+            <div class="col-xs-3"><span class="calc-operator">x</span></div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Footer Start -->

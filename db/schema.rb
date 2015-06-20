@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150530060719) do
+ActiveRecord::Schema.define(version: 20150614054140) do
+
+  create_table "account_years", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "additional_fees", force: true do |t|
+    t.integer  "fee_id"
+    t.string   "name"
+    t.integer  "amount",     default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "additional_fees", ["fee_id"], name: "index_additional_fees_on_fee_id"
 
   create_table "campus", force: true do |t|
     t.string   "name"
@@ -19,6 +35,25 @@ ActiveRecord::Schema.define(version: 20150530060719) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "fees", force: true do |t|
+    t.integer  "level_id"
+    t.integer  "month_id"
+    t.integer  "account_year_id"
+    t.integer  "monthly_fee",     default: 0
+    t.integer  "session_fee",     default: 0
+    t.integer  "admission_fee",   default: 0
+    t.integer  "ict_fee",         default: 0
+    t.integer  "exam_fee",        default: 0
+    t.integer  "others",          default: 0
+    t.string   "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "fees", ["account_year_id"], name: "index_fees_on_account_year_id"
+  add_index "fees", ["level_id"], name: "index_fees_on_level_id"
+  add_index "fees", ["month_id"], name: "index_fees_on_month_id"
 
   create_table "guardians", force: true do |t|
     t.string   "name"
@@ -31,6 +66,12 @@ ActiveRecord::Schema.define(version: 20150530060719) do
   add_index "guardians", ["user_id"], name: "index_guardians_on_user_id"
 
   create_table "levels", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "months", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"

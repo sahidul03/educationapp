@@ -1,0 +1,111 @@
+<% if @fee %>
+    <div style="border:1px solid #ddd; border-bottom:none;" class="bill-to-receipt">
+      <div class="row">
+        <div class="col-sm-6">
+          <small class="text-left">
+            <h4><strong><a href="#">Class : <%= @fee.level.name %></a></strong></h4>
+            <p><strong>Year / session: </strong> <span class="label label-primary"><%= @fee.account_year.name%></span></p>
+
+
+          </small>
+
+        </div>
+        <div class="col-sm-6"><br>
+          <small class="text-right">
+            <p><strong>Update : </strong> <%= @fee.updated_at %></p>
+            <p><strong>Month : </strong> <span class="label label-warning"><%= @fee.month.name %></span></p>
+
+          </small>
+
+        </div>
+      </div>
+    </div>
+    <!--end of bill to--->
+    <div style="border:1px solid #ddd" class="table-responsive">
+      <table class="table table-condensed ">
+        <thead>
+        <tr>
+          <th>SL. number</th>
+          <th>Category</th>
+          <th>Amount ( tk )</th>
+          <th>Delete / Edit</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr>
+          <th>01</th>
+          <td>Student Fee</td>
+          <td><%= @fee.monthly_fee %></td>
+          <td>
+            <div class="btn-group btn-group-xs">
+              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
+              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>01</th>
+          <td>Session Fee</td>
+          <td><%= @fee.session_fee %></td>
+          <td>
+            <div class="btn-group btn-group-xs">
+              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
+              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>01</th>
+          <td>Admission Fee</td>
+          <td><%= @fee.admission_fee %></td>
+          <td>
+            <div class="btn-group btn-group-xs">
+              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
+              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>01</th>
+          <td>ICT Fee</td>
+          <td><%= @fee.ict_fee %></td>
+          <td>
+            <div class="btn-group btn-group-xs">
+              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
+              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>01</th>
+          <td>Exam Fee</td>
+          <td><%= @fee.exam_fee %></td>
+          <td>
+            <div class="btn-group btn-group-xs">
+              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
+              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>01</th>
+          <td>Others Fee</td>
+          <td><%= @fee.others %></td>
+          <td>
+            <div class="btn-group btn-group-xs">
+              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
+              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
+            </div>
+          </td>
+        </tr>
+
+        </tbody>
+
+      </table>
+    </div>
+<% else %>
+    <div>No Record Available</div>
+<% end %>
+
