@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       get "search_students_according_to_gender"
       get "fee_setting"
       post "fee_create"
+      get "nothing_found"
     end
 
   end
@@ -40,6 +41,10 @@ Rails.application.routes.draw do
   resources :fees do
     collection do
       get 'load_class_wise_fees'
+      get "fee_collect/:id", action: 'fee_collect', as: :fee_collect
+      get "fee_collect_statistics"
+      post "student_current_account"
+      get 'fee'
     end
   end
 

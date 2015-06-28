@@ -687,13 +687,14 @@
         <span>Routine</span>
       </a>
       </li>
-      <li><a href='#'>
-        <div class="icone-button">
-          <i style="color:#F05050;" class="fa fa-barcode"></i>
-          <span style="background-color:#27C24C;">5%</span>
-        </div>
-        <span>Fee</span>
-      </a>
+      <li>
+        <%= link_to fee_fees_path do %>
+            <div class="icone-button">
+              <i style="color:#F05050;" class="fa fa-barcode"></i>
+              <span style="background-color:#27C24C;">5%</span>
+            </div>
+            <span>Fee</span>
+        <% end %>
       </li>
       <li><a href='#'>
         <div class="icone-button">

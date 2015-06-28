@@ -1,4 +1,5 @@
 <div class="content ">
+
 <!-- Start info box -->
 <div  class="row   top-summary">
   <div class="col-lg-3 col-md-6">
@@ -108,11 +109,13 @@
 
 </div>
 <!-- End of info box -->
+
+
 <div class="row">
 <div class="col-lg-8 portlets">
 <div class="widget">
 <div class="widget-header">
-  <h2><i class="fa fa-bar-chart"></i> <strong>Fee</strong> setting </h2>
+  <h2><i class="fa fa-bar-chart"></i> <strong>Fee</strong> Collect</h2>
   <div class="additional-btn">
     <a href="#" class="hidden reload"><i class="fa fa-repeat"></i></a>
     <a class="hidden" id="dropdownMenu1" data-toggle="dropdown">
@@ -128,356 +131,219 @@
     <a href="#" class="widget-popout hidden tt" title="Pop Out/In"><i class="fa fa-chevron-up "></i></a>
     <a href="#" class="widget-maximize hidden"><i class="fa fa-arrows"></i></a>
     <a href="#" class="widget-toggle"><i class="fa fa-chevron-down"></i></a>
-
+    <a href="#" class="widget-close"><i class="fa fa-close"></i></a>
   </div>
 </div>
 
 
 
 <div class="widget-content">
-<div  class="data-table-toolbar">
-  <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-      <h4 class="error_message_for_student_id_input"></h4>
+  <div  class="data-table-toolbar">
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <h4 class="error_message_for_student_id_input"></h4>
+      </div>
+      <div class="col-md-4"></div>
     </div>
-    <div class="col-md-4"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
-      <form role="form">
-        <input type="text" class="form-control student_id_field_for_account_search" placeholder=" Student id ">
-      </form>
-    </div>
-    <div class="col-md-8">
-      <div class="toolbar-btn-action">
-        <a class="btn btn-success submit_btn_for_student_account_search"><i class="fa fa-check"></i> Collect Fee</a>
+    <div class="row">
+      <%#= form_for @user, :url => student_current_account_fees_path, method: :post, html: {multipart: :true}, :remote=> true do |f| %>
+      <div class="col-md-4">
+        <%#= f.text_field :id, :class => 'form-control' , :placeholder=>" Student id "%>
+         <input type="text" class="form-control student_id_field_for_account_search" placeholder=" Student id ">
+      </div>
+      <div class="col-md-8">
+        <div class="toolbar-btn-action">
+          <%#= f.submit "Collect Fee", :class =>"btn btn-success" %>
+          <%#= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+          <%#= button_tag(type: 'submit', class: "btn btn-success") do %>
+              <!--<i class="fa fa-check"></i> Collect Fee-->
+          <%# end %>
+          <button class="btn btn-success submit_btn_for_student_account_search"><i class="fa fa-check"></i> Collect Fee</button>
 
+        </div>
+      </div>
+      <%# end %>
+    </div>
+  </div>
+
+  <div class="bill_to_container">
+    <div class="bill-to">
+      <div class="row">
+        <div class="col-sm-6">
+          <small class="text-left">
+            <h4><strong><a href="#"><%= @student.first_name+' '+@student.last_name %></a></strong></h4>
+            <p><strong>Student ID : </strong>#<span class="student_id_for_payment"><%= @student.user.id %></span></p>
+            <p><strong>Class : </strong> <%= @student.level.name %></p>
+          </small>
+          <address>
+            37/k mirpur Dhaka-1,<br>
+            Middle payekpara<br>
+            <abbr title="Phone"><i class="fa fa-phone"></i></abbr><%= @student.guardian.contact_number %>
+          </address>
+        </div>
+        <div class="col-sm-6"><br>
+          <small class="text-right">
+            <p><strong>Last Date : </strong> January 15, 2014</p>
+            <p><strong>Pyment Status : </strong> <span class="label label-danger"><%= @student.student_fee.payment_status if @student.student_fee %></span></p>
+            <p><strong>Advance  : </strong> <span class="label label-success"><%= @student.student_fee.advance if @student.student_fee %></span></p>
+            <p><strong>Due : </strong> <span class="label label-warning"><%= @student.student_fee.due if @student.student_fee %></span></p>
+            <p><strong>Payable  : </strong> <span class="label label-primary"><%= @student.student_fee.due if @student.student_fee %></span></p>
+
+          </small>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+    <div class="table-responsive">
 
-
-<div class="table-responsive">
-  <div class="col-lg-8 portlets">
-    <h4 class="text-left padding-left">Set fee setting</h4>
-  </div>
-  <%= form_for @fee  do |f|%>
-      <table class="table table-condensed ">
+      <table class="table table-condensed table-striped">
         <thead>
         <tr>
-          <th>SL. number</th>
-          <th>Category</th>
-          <th>Option</th>
-          <th>Delet / Edit</th>
+          <th>Total Payable</th>
+
+          <th>Input Amount</th>
+          <th width="100">TOTAL</th>
         </tr>
         </thead>
 
         <tbody>
+        <tr>
+          <td>553 tk /= (Five Hundred Fifty-Three)</td>
 
-        <tr>
-          <td>01</td>
-          <td>Select Class</td>
-          <td>
-            <%= select_tag 'select_level', options_from_collection_for_select(Level.all,:id, :name), {:prompt => 'Select Class', :class => 'form-control' } %>
+          <td><input type="email" class="form-control" id="exampleInputEmail1" placeholder="Payable Amount...">
           </td>
           <td>
-            <div class="btn-group btn-group-xs">
-              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1 disabled"><i class="fa fa-close"></i></a>
-              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4 disabled"><i class="fa fa-edit"></i></a>
-            </div>
+            <a class="btn btn-danger"><i class="fa fa-check"></i> Submit</a>
           </td>
         </tr>
-        <tr>
-          <td>02</td>
-          <td>Select year</td>
-          <td>
-            <%= select_tag 'select_year', options_from_collection_for_select(AccountYear.all,:id, :name), {:prompt => 'Select Year', :class => 'form-control' } %>
-          </td>
-          <td>
-            <div class="btn-group btn-group-xs">
-              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1 disabled"><i class="fa fa-close"></i></a>
-              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4 disabled"><i class="fa fa-edit"></i></a>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>03</td>
-          <td>Select Month</td>
-          <td>
-            <%= select_tag 'select_month', options_from_collection_for_select(Month.all,:id, :name), {:prompt => 'Select Month', :class => 'form-control' } %>
-          </td>
-          <td>
-            <div class="btn-group btn-group-xs">
-              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1 disabled"><i class="fa fa-close"></i></a>
-              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4 disabled"><i class="fa fa-edit"></i></a>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>04</td>
-          <td>Last date of fee collect</td>
-          <td>
-            <%= f.text_field :comment, :class => 'form-control' , :placeholder=>" Write something here.... "%>
-          </td>
-          <td>
-            <div class="btn-group btn-group-xs">
-              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
-              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>05</td>
-          <td>Student Fee</td>
-          <td>
-            <%= f.text_field :monthly_fee, :class => 'form-control allow_numerical_value', :placeholder=>" tk "%>
-          </td>
-          <td>
-            <div class="btn-group btn-group-xs">
-              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1" id=""><i class="fa fa-close"></i></a>
-              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>06</td>
-          <td>Session Fee</td>
-          <td>
-            <%= f.text_field :session_fee, :class => 'form-control' , :placeholder=>" tk "%>
-          </td>
-          <td>
-            <div class="btn-group btn-group-xs">
-              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
-              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>07</td>
-          <td>Admission Fee</td>
-          <td>
-            <%= f.text_field :admission_fee, :class => 'form-control' , :placeholder=>" tk "%>
-          </td>
-          <td>
-            <div class="btn-group btn-group-xs">
-              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
-              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>08</td>
-          <td>ICT  Fee</td>
-          <td>
-            <%= f.text_field :ict_fee, :class => 'form-control' , :placeholder=>" tk "%>
-          </td>
-          <td>
-            <div class="btn-group btn-group-xs">
-              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
-              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>09</td>
-          <td>Exam  Fee</td>
-          <td>
-            <%= f.text_field :exam_fee, :class => 'form-control' , :placeholder=>" tk "%>
-          </td>
-          <td>
-            <div class="btn-group btn-group-xs">
-              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
-              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>10</td>
-          <td>Others  Fee</td>
-          <td>
-            <%= f.text_field :others, :class => 'form-control' , :placeholder=>" tk "%>
-          </td>
-          <td>
-            <div class="btn-group btn-group-xs">
-              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
-              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>11</td>
-          <td>Comments</td>
-          <td>
-            <%= f.text_field :comment, :class => 'form-control' , :placeholder=>" Write something here.... "%>
-          </td>
-          <td>
-            <div class="btn-group btn-group-xs">
-              <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
-              <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
-            </div>
-          </td>
-        </tr>
-
-
         </tbody>
 
       </table>
 
+      <br><br>
 
-      <div  class="data-table-toolbar">
-        <div class="row">
-          <div class="col-md-4">
+      <h4 class="text-center">Thank you for your payment!</h4><br>
+    </div><!--end of table-responsive --->
+  </div>
 
-          </div>
-          <div class="col-md-8">
-            <div class="toolbar-btn-action">
-              <%= f.submit "Submit", :class =>"btn btn-blue-3" %>
-            </div>
-          </div>
-        </div>
-      </div>
-  <% end %>
-  <h4 class="text-center">Successfully Set fee </h4><br><br>
-</div>
+  <!--end of bill to--->
 
 
+  <!-- Your bill money receipt here -->
+  <div class="widget invoice">
+    <div style="display: none" class="widget-content padding">
 
-<div  class="widget invoice">
-
-
-  <div  class="widget-content padding">
-    <div  class="data-table-toolbar">
-      <div class="row">
-        <div class="col-md-9">
-          <h4 class="text-left" >Find fee of a class </h4>
-        </div>
-        <div  class="col-md-3">
-
-          <%= select_tag 'level_id', options_from_collection_for_select(Level.all,:id, :name), {:prompt => 'Select Class', :class => 'btn btn-primary' } %>
-
-
-        </div>
-      </div>
-    </div>
-    <div class="class_wise_fees_view_container">
-      <div style="border:1px solid #ddd; border-bottom:none;" class="bill-to-receipt">
+      <div class="bill-to-receipt">
         <div class="row">
           <div class="col-sm-6">
+            <h4> Ashraful Alam</h4>
             <small class="text-left">
-              <h4><strong><a href="#">Class : <%= @last_updated_fee.level.name %></a></strong></h4>
-              <p><strong>Year / session: </strong> <span class="label label-primary"><%= @last_updated_fee.account_year.name%></span></p>
-
-
+              <p>ID : #101-33-184</p>
+              <p>CLASS : xi </p>
             </small>
 
           </div>
           <div class="col-sm-6"><br>
             <small class="text-right">
-              <p><strong>Update : </strong> <%= @last_updated_fee.updated_at %></p>
-              <p><strong>Month : </strong> <span class="label label-warning"><%= @last_updated_fee.month.name %></span></p>
-
+              <p><strong>PAYMENT  DATE : </strong> January 15, 2014</p>
+              <p><strong>PAYMENT STATUS : </strong> <span class="label label-success">PAID</span></p>
+              <p><strong>MONEY RECEIPT : </strong> 201564837-MG-19/130</p>
             </small>
-
           </div>
         </div>
       </div>
-      <!--end of bill to--->
-      <div style="border:1px solid #ddd" class="table-responsive">
+
+      <br><br>
+
+      <div class="table-responsive">
+
         <table class="table table-condensed ">
           <thead>
           <tr>
-            <th>SL. number</th>
-            <th>Category</th>
-            <th>Amount ( tk )</th>
-            <th>Delete / Edit</th>
+            <th>SL. Number</th>
+            <th>Fees Category</th>
+
+            <th>Amount (tk)</th>
+
           </tr>
           </thead>
 
           <tbody>
+          <tr>
+            <td>01</td>
+            <td>Tuition Fee</td>
 
-          <tr>
-            <th>01</th>
-            <td>Student Fee</td>
-            <td><%= @last_updated_fee.monthly_fee %></td>
-            <td>
-              <div class="btn-group btn-group-xs">
-                <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
-                <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
-              </div>
-            </td>
+            <td>1300.00 tk</td>
           </tr>
           <tr>
-            <th>01</th>
-            <td>Session Fee</td>
-            <td><%= @last_updated_fee.session_fee %></td>
-            <td>
-              <div class="btn-group btn-group-xs">
-                <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
-                <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th>01</th>
-            <td>Admission Fee</td>
-            <td><%= @last_updated_fee.admission_fee %></td>
-            <td>
-              <div class="btn-group btn-group-xs">
-                <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
-                <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th>01</th>
-            <td>ICT Fee</td>
-            <td><%= @last_updated_fee.ict_fee %></td>
-            <td>
-              <div class="btn-group btn-group-xs">
-                <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
-                <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th>01</th>
+            <td>02</td>
             <td>Exam Fee</td>
-            <td><%= @last_updated_fee.exam_fee %></td>
-            <td>
-              <div class="btn-group btn-group-xs">
-                <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
-                <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
-              </div>
-            </td>
+            <td>4500.00 tk</td>
           </tr>
           <tr>
-            <th>01</th>
-            <td>Others Fee</td>
-            <td><%= @last_updated_fee.others %></td>
-            <td>
-              <div class="btn-group btn-group-xs">
-                <a data-toggle="tooltip" title="Delete" class="btn btn-red-1"><i class="fa fa-close"></i></a>
-                <a data-toggle="tooltip" title="Edit" class="btn btn-orange-4"><i class="fa fa-edit"></i></a>
-              </div>
-            </td>
+            <td>03</td>
+            <td>Admission Fee</td>
+            <td>5000.00 tk</td>
           </tr>
-
+          <tr>
+            <td>04</td>
+            <td class="text-right"><strong>Others Fee :</strong></td>
+            <td>127.50 tk</td>
+          </tr>
+          <tr>
+            <td>05</td>
+            <td  class="text-right"><strong>Fine :</strong></td>
+            <td>64.50 tk</td>
+          </tr>
+          <tr>
+            <td>06</td>
+            <td class="text-right"><strong>Discount : </strong></td>
+            <td><strong class="text-red-1">2.00 tk </strong></td>
+          </tr>
+          <tr>
+            <td>07</td>
+            <td class="text-right"><strong>Tax (5%) :</strong></td>
+            <td>3.00 tk</td>
+          </tr>
+          <tr>
+            <td colspan="2" class="text-right"><strong>TOTAL :</strong></td>
+            <td><strong class="text-primary">7778.00  tk</strong></td>
+          </tr>
           </tbody>
 
         </table>
+        <br>
+
+
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+
+          <div style="margin-top:-30px;" class="company-column">
+            <h4><img width="80" height="80" src="images/logo.png" alt="Logo"></h4>
+            <address>
+
+              3049 Anmoore Road<br>
+              Brooklyn, NY 11230 <br>
+              <abbr title="Phone"><i class="fa fa-phone-square"></i></abbr> (123) 456-7890
+            </address>
+          </div>
+
+        </div>
+        <div class="col-sm-8 text-right">
+          <h4 class="text-right">Thank you for your payment!</h4>
+          <h4>#HKN-27813123</h4>
+          <a href="#" class="btn btn-primary btn-sm invoice-print"><i class="fa fa-print"></i> Print</a>
+        </div>
+
       </div>
     </div>
-
   </div>
+  <!-- End of money receipt -->
 </div>
-<!--end of widget invoice-->
+</div>
+</div>
 
-
-</div>
-</div>
-</div>
 <div class="col-lg-4 portlets">
   <div class="widget lightblue-2">
     <div class="widget-header transparent">
@@ -703,6 +569,7 @@
   </div>
 </div>
 </div>
+
 <!-- Footer Start -->
 
 <script src="/js/jquery-1.11.1.min.js"></script>
@@ -722,37 +589,4 @@
         });
 
     };
-    var fees_entry=new function() {
-        this.class_select_for_fess_details = new function () {
-            var select_class_dropdown = $('#level_id');
-            select_class_dropdown.click(function () {
-                var level_id = select_class_dropdown.val();
-                if (level_id) {
-                    $.ajax({
-                        url: "<%= url_for load_class_wise_fees_fees_path %>",
-                        data: {level_id: level_id},
-                        type: 'get'
-                    });
-                }
-            });
-        };
-        this.AllowNumericalValue=new function(){
-            var field=$('.allow_numerical_value');
-            field.keydown(function(e){
-                if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-                    // Allow: Ctrl+A, Command+A
-                        (e.keyCode == 65 && ( e.ctrlKey === true || e.metaKey === true ) ) ||
-                    // Allow: home, end, left, right, down, up
-                        (e.keyCode >= 35 && e.keyCode <= 40)) {
-                    // let it happen, don't do anything
-                    return;
-                }
-                // Ensure that it is a number and stop the keypress
-                if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-                    e.preventDefault();
-                }
-            });
-        };
-    };
-
 </script>

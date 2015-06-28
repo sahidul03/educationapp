@@ -1,0 +1,435 @@
+<div class="content ">
+
+
+<!-- Start info box -->
+<div  class="row   top-summary">
+  <div class="col-lg-3 col-md-6">
+    <div class="widget lightblue-1">
+      <div class="widget-content padding">
+        <div class="widget-icon">
+
+        </div>
+        <div class="text-box">
+          <p class="maindata">TOTAL <b>Collected</b></p>
+          <h2><span class="animate-number" data-value="60000000" data-duration="3000">0</span>Tk</h2>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="widget-footer">
+        <div class="row">
+          <div class="col-sm-12">
+            <i class="fa fa-caret-up rel-change"></i><b> Present of Collaction</b> 89%
+          </div>
+          <div class="col-sm-12">
+            <i class="fa fa-caret-down rel-change"></i><b> Present of unpaid</b> 11%
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6">
+    <div class="widget green-1">
+      <div class="widget-content padding">
+        <div class="widget-icon">
+
+        </div>
+        <div class="text-box">
+          <p class="maindata">TOTAL <b>Collected in this Yearly</b></p>
+          <h2><span class="animate-number" data-value="1200" data-duration="3000">0</span>Tk</h2>
+
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="widget-footer">
+        <div class="row">
+          <div class="col-sm-12">
+            <i class="fa fa-caret-up rel-change"></i><b> Present of Collaction</b> 89%
+          </div>
+          <div class="col-sm-12">
+            <i class="fa fa-caret-down rel-change"></i><b> Present of unpaid</b> 11%
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6">
+    <div class="widget orange-4">
+      <div class="widget-content padding">
+        <div class="widget-icon">
+
+        </div>
+        <div class="text-box">
+          <p class="maindata">TOTAL <b> Collected in this Monthly</b></p>
+          <h2><span class="animate-number" data-value="600" data-duration="3000">0</span>Tk</h2>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="widget-footer">
+        <div class="row">
+          <div class="col-sm-12">
+            <i class="fa fa-caret-up rel-change"></i><b> Present of Collaction</b> 89%
+          </div>
+          <div class="col-sm-12">
+            <i class="fa fa-caret-down rel-change"></i><b> Present of unpaid</b> 11%
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6">
+    <div class="widget darkblue-2">
+      <div class="widget-content padding">
+        <div class="widget-icon">
+
+        </div>
+        <div class="text-box">
+          <p class="maindata">TOTAL <b>Remaining</b></p>
+          <h2><span class="animate-number" data-value="8000" data-duration="3000">0</span>Tk</h2>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="widget-footer">
+        <div class="row">
+          <div class="col-sm-12">
+            <i class="fa fa-caret-up rel-change"></i><b> Present of Collaction</b> 89%
+          </div>
+          <div class="col-sm-12">
+            <i class="fa fa-caret-down rel-change"></i><b> Present of unpaid</b> 11%
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- End of info box -->
+
+
+<div class="row">
+  <div class="col-lg-8 portlets">
+    <div class="widget">
+      <div class="widget-header">
+        <h2><i class="fa fa-bar-chart"></i> <strong>Fee</strong> Collect</h2>
+        <div class="additional-btn">
+          <a href="#" class="hidden reload"><i class="fa fa-repeat"></i></a>
+          <a class="hidden" id="dropdownMenu1" data-toggle="dropdown">
+            <i class="fa fa-cogs"></i>
+          </a>
+          <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+          <a href="#" class="widget-popout hidden tt" title="Pop Out/In"><i class="fa fa-chevron-up "></i></a>
+          <a href="#" class="widget-maximize hidden"><i class="fa fa-arrows"></i></a>
+          <a href="#" class="widget-toggle"><i class="fa fa-chevron-down"></i></a>
+
+        </div>
+      </div>
+
+
+
+      <div class="widget-content">
+        <div  class="data-table-toolbar">
+          <div class="row">
+            <%= form_for @user, :url => student_current_account_fees_path, method: :post do |f| %>
+                <div class="col-md-4">
+                  <%= f.text_field :id, :class => 'form-control' , :placeholder=>" Student id "%>
+                  <!--<input type="text" class="form-control student_id_for_account_search" placeholder=" Student id ">-->
+                </div>
+                <div class="col-md-8">
+                  <div class="toolbar-btn-action">
+                    <%#= f.submit "Collect Fee", :class =>"btn btn-success" %>
+                    <%#= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+                    <%= button_tag(type: 'submit', class: "btn btn-success") do %>
+                        <i class="fa fa-check"></i> Collect Fee
+                    <% end %>
+                    <!--<button class="btn btn-success btn_for_student_account_search"><i class="fa fa-check"></i> Collect Fee</button>-->
+
+                  </div>
+                </div>
+            <% end %>
+
+            <!--<div class="col-md-4">-->
+              <!--<form role="form">-->
+                <!--<input type="text" class="form-control" placeholder=" Student id ">-->
+              <!--</form>-->
+            <!--</div>-->
+            <!--<div class="col-md-8">-->
+              <!--<div class="toolbar-btn-action">-->
+                <!--<a class="btn btn-success"><i class="fa fa-check"></i> Submit</a>-->
+
+              <!--</div>-->
+            <!--</div>-->
+          </div>
+        </div>
+
+        <div class="row stacked">
+          <div class="col-sm-5 mini-stats">
+            <div id="morris-bar-home" class="morris-chart" style="height: 270px;"></div>
+            <div class="sales-report-data">
+              <span class="pull-left">Completed Sales</span><span class="pull-right">65 / 174</span>
+              <div class="progress progress-xs">
+                <div style="width: 38%;" class="progress-bar bg-blue-1"></div>
+              </div>
+              <div class="clearfix"></div>
+              <span class="pull-left">Return(s) Processed</span><span class="pull-right">22 / 25</span>
+              <div class="progress progress-xs">
+                <div style="width: 88%;" class="progress-bar bg-lightblue-1"></div>
+              </div>
+              <div class="clearfix"></div>
+              <span class="pull-left">Shipped Products</span><span class="pull-right">418 / 624</span>
+              <div class="progress progress-xs">
+                <div style="width: 58%;" class="progress-bar"></div>
+              </div>
+              <div class="clearfix"></div>
+              <span class="pull-left">Overall Product Stock</span><span class="pull-right">19%</span>
+              <div class="progress progress-xs">
+                <div style="width: 19%;" class="progress-bar bg-pink-1"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-7">
+            <div id="vector-map" style="height:370px"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4 portlets">
+    <div class="widget lightblue-2">
+      <div class="widget-header transparent">
+        <h2><i class="fa fa-barcode"></i><strong> Fee</strong> Status</h2>
+        <div class="additional-btn">
+          <a href="#" class="hidden reload"><i class="fa fa-repeat"></i></a>
+          <a class="hidden" id="dropdownMenu1" data-toggle="dropdown">
+            <i class="fa fa-cogs"></i>
+          </a>
+          <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+          <a href="#" class="widget-popout hidden tt" title="Pop Out/In"><i class="fa fa-chevron-up "></i></a>
+          <a href="#" class="widget-maximize hidden"><i class="fa fa-arrows"></i></a>
+          <a href="#" class="widget-toggle"><i class="fa fa-chevron-down"></i></a>
+          <a href="#" class="widget-close"><i class="fa fa-close"></i></a>
+        </div>
+      </div>
+      <div class="widget-content">
+        <div id="website-statistic2" class="statistic-chart">
+
+          <div class="col-sm-12 stacked">
+
+            <div class="sales-report-data">
+              <span class="pull-left">Class i</span><span class="pull-right">65 / 174</span>
+              <div class="progress progress-xs">
+                <div style="width: 38%;" class="progress-bar bg-blue-1"></div>
+              </div>
+              <div class="clearfix"></div>
+              <span class="pull-left">Class ii</span><span class="pull-right">22 / 25</span>
+              <div class="progress progress-xs">
+                <div style="width: 88%;" class="progress-bar bg-green-1"></div>
+              </div>
+              <div class="clearfix"></div>
+              <span class="pull-left">Class iii</span><span class="pull-right">418 / 624</span>
+              <div class="progress progress-xs">
+                <div style="width: 58%;" class="progress-bar bg-pink-1"></div>
+              </div>
+              <div class="clearfix"></div>
+              <span class="pull-left">Class iv</span><span class="pull-right">418 / 624</span>
+              <div class="progress progress-xs">
+                <div style="width: 58%;" class="progress-bar bg-blue-3"></div>
+              </div>
+              <div class="clearfix"></div>
+              <span class="pull-left">Class v</span><span class="pull-right">418 / 624</span>
+              <div class="progress progress-xs">
+                <div style="width: 58%;" class="progress-bar bg-darkblue-3"></div>
+              </div>
+              <div class="clearfix"></div>
+              <span class="pull-left">Class vi</span><span class="pull-right">418 / 624</span>
+              <div class="progress progress-xs">
+                <div style="width: 58%;" class="progress-bar bg-green-3"></div>
+              </div>
+              <div class="clearfix"></div>
+              <span class="pull-left">Class vii</span><span class="pull-right">418 / 624</span>
+              <div class="progress progress-xs">
+                <div style="width: 58%;" class="progress-bar bg-orange-1"></div>
+              </div>
+              <div class="clearfix"></div>
+              <span class="pull-left">Class viii</span><span class="pull-right">418 / 624</span>
+              <div class="progress progress-xs">
+                <div style="width: 58%;" class="progress-bar bg-darkblue-2"></div>
+              </div>
+              <div class="clearfix"></div>
+              <span class="pull-left">Class ix</span><span class="pull-right">418 / 624</span>
+              <div class="progress progress-xs">
+                <div style="width: 58%;" class="progress-bar"></div>
+              </div>
+              <div class="clearfix"></div>
+              <span class="pull-left">Class x</span><span class="pull-right">418 / 624</span>
+              <div class="progress progress-xs">
+                <div style="width: 58%;" class="progress-bar"></div>
+              </div>
+              <div class="clearfix"></div>
+              <span class="pull-left">Class xi</span><span class="pull-right">418 / 624</span>
+              <div class="progress progress-xs">
+                <div style="width: 58%;" class="progress-bar"></div>
+              </div>
+              <div class="clearfix"></div>
+              <span class="pull-left">Class xii</span><span class="pull-right">418 / 624</span>
+              <div class="progress progress-xs">
+                <div style="width: 58%;" class="progress-bar"></div>
+              </div>
+              <div class="clearfix"></div>
+              <span class="pull-left">Overall Product Stock</span><span class="pull-right">19%</span>
+              <div class="progress progress-xs">
+                <div style="width: 19%;" class="progress-bar bg-pink-1"></div>
+              </div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div id="home-chart-2"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-lg-4 col-md-6 portlets">
+    <div id="stock-app" class="widget green-3">
+      <div class="widget-header transparent">
+        <h2><strong>Stock</strong> Markets</h2>
+        <div class="additional-btn">
+          <a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
+          <a class="hidden" id="dropdownMenu1" data-toggle="dropdown">
+            <i class="fa fa-cogs"></i>
+          </a>
+          <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+          <a href="#" class="widget-popout hidden tt" title="Pop Out/In"><i class="icon-publish"></i></a>
+          <a href="#" class="widget-maximize hidden"><i class="icon-resize-full-1"></i></a>
+          <a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
+          <a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
+        </div>
+      </div>
+      <div class="widget-content">
+        <div id="website-statistic3" class="statistic-chart">
+          <div class="row">
+            <div class="col-xs-6">
+              <h2>NASDAQ</h2>
+            </div>
+            <div class="col-xs-6">
+              <label id="nasdaq-status" class="stock-status"></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h2>DOW JONES</h2>
+            </div>
+            <div class="col-xs-6">
+              <label id="dow-status" class="stock-status"></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h2>S&P</h2>
+            </div>
+            <div class="col-xs-6">
+              <label id="sp-status" class="stock-status"></label>
+            </div>
+          </div>
+        </div>
+        <div id="home-chart-3"></div>
+      </div>
+      <div class="widget-footer">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-lg-4 col-md-6 portlets">
+    <div id="calc" class="widget darkblue-2">
+      <div class="widget-header">
+        <div class="additional-btn left-toolbar">
+          <div class="btn-group">
+            <a class="additional-icon" id="dropdownMenu2" data-toggle="dropdown">
+              Calculator <i class="fa fa-angle-down"></i>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+              <li><a href="#">Save</a></li>
+              <li><a href="#">Export</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Quit</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="additional-btn">
+          <a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
+
+          <a href="#" class="widget-popout hidden tt" title="Pop Out/In"><i class="icon-publish"></i></a>
+          <a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
+        </div>
+      </div>
+      <div id="calculator" class="widget-content">
+        <div class="calc-top col-xs-12">
+          <div class="row">
+            <div class="col-xs-3"><span class="calc-clean">C</span></div>
+            <div class="col-xs-9"><div class="calc-screen"></div></div>
+          </div>
+        </div>
+
+        <div class="calc-keys col-xs-12">
+          <div class="row">
+            <div class="col-xs-3"><span>7</span></div>
+            <div class="col-xs-3"><span>8</span></div>
+            <div class="col-xs-3"><span>9</span></div>
+            <div class="col-xs-3"><span class="calc-operator">+</span></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3"><span>4</span></div>
+            <div class="col-xs-3"><span>5</span></div>
+            <div class="col-xs-3"><span>6</span></div>
+            <div class="col-xs-3"><span class="calc-operator">-</span></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3"><span>1</span></div>
+            <div class="col-xs-3"><span>2</span></div>
+            <div class="col-xs-3"><span>3</span></div>
+            <div class="col-xs-3"><span class="calc-operator">÷</span></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3"><span>0</span></div>
+            <div class="col-xs-3"><span>.</span></div>
+            <div class="col-xs-3"><span class="calc-eval">=</span></div>
+            <div class="col-xs-3"><span class="calc-operator">x</span></div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Footer Start -->

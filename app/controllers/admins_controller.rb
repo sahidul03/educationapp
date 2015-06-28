@@ -153,6 +153,10 @@ class AdminsController < ApplicationController
   #   end
   #
   # end
+  def nothing_found
+    render layout: 'admin_layout'
+  end
+
 
   protected
   # def fee_params

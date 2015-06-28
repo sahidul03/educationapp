@@ -23,6 +23,51 @@ class FeesController < ApplicationController
     @fee=fees.last if fees.any?
   end
 
+  def fee_collect_statistics
+    @user=User.new
+    render layout: 'admin_layout'
+  end
+
+  def fee_collect
+    usr=User.find(params[:id]) rescue nil
+    @student=nil
+    if usr
+      if usr.students.any?
+        @student=usr.students.last
+        render layout: 'admin_layout'
+      else
+        redirect_to nothing_found_admins_path
+      end
+    else
+      redirect_to nothing_found_admins_path
+    end
+
+
+    # raise params[:id].inspect
+    @user=User.new
+  end
+
+  def student_current_account
+    # raise  params[:user][:id].inspect
+    # unless params[:user][:id].blank?
+    #   redirect_to fee_collect_fees_path(params[:user][:id])
+    # else
+    #
+    # end
+    usr=User.find(params[:student_id]) rescue nil
+    @student=nil
+    if usr
+      if usr.students.any?
+        @student=usr.students.last
+      end
+    end
+    # redirect_to fee_collect_fees_path(12)
+  end
+
+  def fee
+    render layout: 'admin_layout'
+  end
+
   protected
   def fee_params
     params.require(:fee).permit(:monthly_fee, :session_fee, :admission_fee, :ict_fee, :exam_fee, :others, :comment).

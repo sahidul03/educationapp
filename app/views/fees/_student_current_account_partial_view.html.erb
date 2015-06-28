@@ -1,0 +1,67 @@
+<% if @student %>
+    <div class="bill-to">
+      <div class="row">
+        <div class="col-sm-6">
+          <small class="text-left">
+            <h4><strong><a href="#"><%= @student.first_name+' '+@student.last_name %></a></strong></h4>
+            <p><strong>Student ID : </strong>#<span class="student_id_for_payment"><%= @student.user.id %></span></p>
+            <p><strong>Class : </strong> <%= @student.level.name %></p>
+          </small>
+          <address>
+            37/k mirpur Dhaka-1,<br>
+            Middle payekpara<br>
+            <abbr title="Phone"><i class="fa fa-phone"></i></abbr><%= @student.guardian.contact_number %>
+          </address>
+        </div>
+        <div class="col-sm-6"><br>
+          <small class="text-right">
+            <p><strong>Last Date : </strong> January 15, 2014</p>
+            <p><strong>Pyment Status : </strong> <span class="label label-danger"><%= @student.student_fee.payment_status if @student.student_fee %></span></p>
+            <p><strong>Advance  : </strong> <span class="label label-success"><%= @student.student_fee.advance if @student.student_fee %></span></p>
+            <p><strong>Due : </strong> <span class="label label-warning"><%= @student.student_fee.due if @student.student_fee %></span></p>
+            <p><strong>Payable  : </strong> <span class="label label-primary"><%= @student.student_fee.due if @student.student_fee %></span></p>
+
+          </small>
+        </div>
+      </div>
+    </div>
+    <div class="table-responsive">
+
+      <table class="table table-condensed table-striped">
+        <thead>
+        <tr>
+          <th>Total Payable</th>
+
+          <th>Input Amount</th>
+          <th width="100">TOTAL</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+          <td>553 tk /= (Five Hundred Fifty-Three)</td>
+
+          <td><input type="email" class="form-control" id="exampleInputEmail1" placeholder="Payable Amount...">
+          </td>
+          <td>
+            <a class="btn btn-danger"><i class="fa fa-check"></i> Submit</a>
+          </td>
+        </tr>
+        </tbody>
+
+      </table>
+
+      <br><br>
+
+      <h4 class="text-center">Thank you for your payment!</h4><br>
+    </div><!--end of table-responsive --->
+<% else %>
+    <div class="bill-to">
+      <div class="row text-center">
+        <h4>
+            No record found
+        </h4>
+      </div>
+    </div>
+
+<% end %>
