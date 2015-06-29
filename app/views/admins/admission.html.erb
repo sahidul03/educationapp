@@ -42,7 +42,7 @@
                         <%= select_tag 'select_campus', options_from_collection_for_select(Campus.all,:id, :name), { :class => 'form-control' } %>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">First Name</label>
+                        <label for="exampleInputEmail1">First Name </label>
                         <%= text_field_tag :student_first_name ,"", :class=> 'form-control', :placeholder=>"First Name" %>
                       </div>
                       <div class="form-group">
